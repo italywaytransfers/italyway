@@ -2,22 +2,22 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"main": ".open-next/worker.js",
 
-	// Deliberately NOT renamed with the move to Italy Way Transfers.
+	// Renamed with the move to Italy Way Transfers, on 19 November 2026.
 	//
-	// A Worker name is an identity, not a label: deploying under a new one
-	// creates a second Worker rather than renaming this one. The D1 binding
-	// below would follow, because it names the database by id — but the nine
-	// secrets would not. CRM_ADMIN_USERNAME, CRM_ADMIN_PASSWORD_HASH,
-	// CRM_SESSION_SECRET, CRM_ALLOWED_EMAILS, CF_ACCESS_AUD,
-	// CF_ACCESS_TEAM_DOMAIN, RESEND_API_KEY, LEAD_ADMIN_EMAIL and
-	// LEAD_FROM_EMAIL all live on the Worker, so a rename logs every CRM user
-	// out permanently and silences every lead email until all nine are set
-	// again by hand.
+	// This reverses an earlier decision recorded here, and the reasoning is
+	// worth keeping because the earlier reasoning was sound at the time. A
+	// Worker name is an identity, not a label: deploying under a new one
+	// creates a second Worker rather than renaming the old one, and secrets
+	// live on the Worker, so a rename silently abandons them. On the previous
+	// account nine secrets were already set, which made the rename cost a
+	// logged-out CRM and dead lead email for nothing a visitor would see.
 	//
-	// The name is invisible to visitors; the hostname in `routes` is what
-	// carries the brand, and that one did change. Renaming buys nothing and
-	// costs the CRM.
-	"name": "private-transfers-across-italy",
+	// None of that applies now. This is a different Cloudflare account,
+	// created fresh for the new brand: no Worker, no secrets, no deploy
+	// history. There is nothing to abandon, so the name may as well be the
+	// one that matches the brand from the first deploy rather than carrying
+	// the old project's name forever.
+	"name": "italy-way-transfers",
 	"compatibility_date": "2026-10-29",
 
 	// nodejs_compat is required for one import: lib/quote/idempotency.ts hashes
@@ -40,11 +40,11 @@
 	// hostname. Access does NOT cover the workers.dev URL, which is why /crm
 	// there refuses everyone.
 	//
-	// Two things must be true on the account before a deploy with this value
-	// succeeds: italywaytransfers.com is an active zone, and the old apex no
-	// longer claims this Worker. The Access application is per-hostname, so it
-	// has to be recreated against the new apex as well — until it is, /crm is
-	// reachable by anyone who knows the path.
+	// One thing must be true on the account before a deploy with this value
+	// succeeds: italywaytransfers.com is an active zone here. The Access
+	// application is per-hostname and per-account, so it has to be created
+	// against this apex on this account — until it is, /crm is reachable by
+	// anyone who knows the path.
 	"routes": [
 		{
 			"pattern": "italywaytransfers.com",
@@ -52,15 +52,14 @@
 		}
 	],
 
-	// Off. It was on temporarily while the custom domain was being proved, and
-	// the apex is now confirmed serving this Worker, so the second origin has
-	// done its job.
+	// Off. It was on temporarily while the custom domain was being proved on
+	// the previous account, and is off here from the start.
 	//
-	// It mattered because *.workers.dev published the entire public site at a
+	// It matters because *.workers.dev publishes the entire public site at a
 	// second address: every page canonicals to the apex, so nothing there
-	// claimed to be the original, but it was still a live URL nobody intended
-	// to publish — and one that Cloudflare Access never covered, which is why
-	// /crm on it refused everyone.
+	// claims to be the original, but it is still a live URL nobody intended to
+	// publish — and one that Cloudflare Access never covers, which is why /crm
+	// on it refuses everyone.
 	//
 	// Turning it off does not touch `routes` above. The custom domain is a
 	// separate trigger with its own DNS record, and withdrawing the
@@ -72,18 +71,22 @@
 			// Self-reference, used by OpenNext for cache purging. The service name
 			// must equal the Worker name above or the deploy fails to resolve it.
 			"binding": "WORKER_SELF_REFERENCE",
-			"service": "private-transfers-across-italy"
+			"service": "italy-way-transfers"
 		}
 	],
 
-	// The D1 database that already exists on the account. Inspected
-	// 29 October 2026: 0 tables, so the migration in
-	// migrations/0001_create_leads.sql creates rather than alters.
+	// The D1 database on the Italy Way Transfers account. Inspected
+	// 19 November 2026: 0 tables, created the same day, so every migration in
+	// migrations/ runs against an empty database and 0001 creates rather than
+	// alters.
+	//
+	// The id is what binds, not the name — renaming the database in the
+	// dashboard would not break this, but recreating it would.
 	"d1_databases": [
 		{
 			"binding": "DB",
-			"database_name": "italytransfers",
-			"database_id": "9f31329f-0b8e-4abd-8b06-9d82f6f6cef6"
+			"database_name": "italywaytransfers",
+			"database_id": "ab7d45d0-6d47-46fa-a74c-f42f75a7e0be"
 		}
 	]
 
