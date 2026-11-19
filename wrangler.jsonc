@@ -2,22 +2,31 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"main": ".open-next/worker.js",
 
-	// Renamed with the move to Italy Way Transfers, on 19 November 2026.
+	// Must equal the Worker that Cloudflare actually deploys to.
 	//
-	// This reverses an earlier decision recorded here, and the reasoning is
-	// worth keeping because the earlier reasoning was sound at the time. A
-	// Worker name is an identity, not a label: deploying under a new one
-	// creates a second Worker rather than renaming the old one, and secrets
-	// live on the Worker, so a rename silently abandons them. On the previous
-	// account nine secrets were already set, which made the rename cost a
-	// logged-out CRM and dead lead email for nothing a visitor would see.
+	// This value has now been wrong twice, in opposite directions, so the
+	// reasoning is recorded rather than the conclusion alone.
 	//
-	// None of that applies now. This is a different Cloudflare account,
-	// created fresh for the new brand: no Worker, no secrets, no deploy
-	// history. There is nothing to abandon, so the name may as well be the
-	// one that matches the brand from the first deploy rather than carrying
-	// the old project's name forever.
-	"name": "italy-way-transfers",
+	// On the previous account the name was `private-transfers-across-italy`
+	// and was deliberately left alone: a Worker name is an identity, not a
+	// label, and secrets live on the Worker, so renaming abandons them. That
+	// was correct there and irrelevant here, because this account was created
+	// fresh and had nothing to abandon.
+	//
+	// What then went wrong is subtler. The Cloudflare dashboard project is
+	// called `italyway`, and Workers Builds deploys to the *project* name —
+	// the deploy of 19 November 2026 15:26 UTC produced a Worker called
+	// `italyway` even though this file said `italy-way-transfers` at the
+	// time. The name here was not ignored, though: it is what
+	// WORKER_SELF_REFERENCE below resolved to, so the live Worker ended up
+	// holding a service binding pointing at an empty Worker that had never
+	// been deployed, which silently breaks OpenNext's cache purging.
+	//
+	// So this string has two jobs: it names the self-reference target, and it
+	// is what every local `wrangler secret put`, `d1` and `deploy` command
+	// targets by default. Both must be the Worker serving the site. If the
+	// dashboard project is ever renamed, change this in the same commit.
+	"name": "italyway",
 	"compatibility_date": "2026-10-29",
 
 	// nodejs_compat is required for one import: lib/quote/idempotency.ts hashes
@@ -71,7 +80,7 @@
 			// Self-reference, used by OpenNext for cache purging. The service name
 			// must equal the Worker name above or the deploy fails to resolve it.
 			"binding": "WORKER_SELF_REFERENCE",
-			"service": "italy-way-transfers"
+			"service": "italyway"
 		}
 	],
 
