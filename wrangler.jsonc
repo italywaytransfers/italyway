@@ -2,9 +2,21 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"main": ".open-next/worker.js",
 
-	// The Worker that already exists on the account. `opennextjs-cloudflare
-	// migrate` guessed "rome-transfers" from package.json; no such Worker
-	// exists, and a deploy under that name would have created a second one.
+	// Deliberately NOT renamed with the move to Italy Way Transfers.
+	//
+	// A Worker name is an identity, not a label: deploying under a new one
+	// creates a second Worker rather than renaming this one. The D1 binding
+	// below would follow, because it names the database by id — but the nine
+	// secrets would not. CRM_ADMIN_USERNAME, CRM_ADMIN_PASSWORD_HASH,
+	// CRM_SESSION_SECRET, CRM_ALLOWED_EMAILS, CF_ACCESS_AUD,
+	// CF_ACCESS_TEAM_DOMAIN, RESEND_API_KEY, LEAD_ADMIN_EMAIL and
+	// LEAD_FROM_EMAIL all live on the Worker, so a rename logs every CRM user
+	// out permanently and silences every lead email until all nine are set
+	// again by hand.
+	//
+	// The name is invisible to visitors; the hostname in `routes` is what
+	// carries the brand, and that one did change. Renaming buys nothing and
+	// costs the CRM.
 	"name": "private-transfers-across-italy",
 	"compatibility_date": "2026-10-29",
 
@@ -24,12 +36,18 @@
 	// The production hostname. `custom_domain: true` makes Cloudflare create
 	// and own the proxied DNS record for the apex, which is also what puts the
 	// request behind Cloudflare Access: the Access application is scoped to
-	// `privatetransfersacrossitaly.com/crm`, so it can only intercept traffic
-	// that arrives on this hostname. Access does NOT cover the workers.dev
-	// URL below, which is why /crm there refuses everyone.
+	// `<apex>/crm`, so it can only intercept traffic arriving on this
+	// hostname. Access does NOT cover the workers.dev URL, which is why /crm
+	// there refuses everyone.
+	//
+	// Two things must be true on the account before a deploy with this value
+	// succeeds: italywaytransfers.com is an active zone, and the old apex no
+	// longer claims this Worker. The Access application is per-hostname, so it
+	// has to be recreated against the new apex as well — until it is, /crm is
+	// reachable by anyone who knows the path.
 	"routes": [
 		{
-			"pattern": "privatetransfersacrossitaly.com",
+			"pattern": "italywaytransfers.com",
 			"custom_domain": true
 		}
 	],

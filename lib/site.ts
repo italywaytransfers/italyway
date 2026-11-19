@@ -64,12 +64,39 @@ export const contactEmail = "italywaytransfers@gmail.com";
  * accounts first, then change the two strings below — a broken social link
  * is worse than one whose handle lags the brand.
  */
-export const socialProfiles = [
-  { network: "instagram", name: "Instagram", href: "https://www.instagram.com/privatetransfersacrossitaly/" },
-  { network: "pinterest", name: "Pinterest", href: "https://www.pinterest.com/acrossitaly/" },
-] as const;
+export const socialProfiles: readonly SocialProfile[] = [
+  // Empty since the 19 November 2026 rename, deliberately.
+  //
+  // These held the old brand's accounts:
+  //   instagram  https://www.instagram.com/privatetransfersacrossitaly/
+  //   pinterest  https://www.pinterest.com/acrossitaly/
+  //
+  // The owner's instruction was that nothing on this site links back to the
+  // previous one, and those two did. The alternative — guessing
+  // `instagram.com/italywaytransfers` — would have put a link to a profile
+  // that may not exist in the footer of every page, which is worse than no
+  // icon at all.
+  //
+  // To restore: rename or create the accounts, then add them back here. The
+  // footer renders the whole block only when this array is non-empty, and
+  // SocialIcon already draws both marks.
+];
 
-export type SocialNetwork = (typeof socialProfiles)[number]["network"];
+/**
+ * Declared rather than inferred from the array above.
+ *
+ * It used to be `(typeof socialProfiles)[number]["network"]`, which resolves
+ * to `never` the moment the array is empty and takes the footer's icon
+ * component down with it. Naming the networks directly lets the list be
+ * empty without the type system deciding no network can exist.
+ */
+export type SocialNetwork = "instagram" | "pinterest";
+
+export type SocialProfile = {
+  network: SocialNetwork;
+  name: string;
+  href: string;
+};
 
 /**
  * The WhatsApp number behind the floating contact button, in the digits-only

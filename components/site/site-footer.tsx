@@ -100,6 +100,10 @@ export function SiteFooter({ locale }: { locale: Locale }) {
               </a>
             </div>
 
+            {/* Rendered only when there is something to link to. The list is
+                empty between the rename and the new accounts existing, and a
+                "Follow us" heading over nothing is worse than no heading. */}
+            {socialProfiles.length > 0 ? (
             <div className="mt-6">
               <h2 className="type-label text-accent-glow">
                 {chrome.followHeading}
@@ -124,6 +128,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
                 ))}
               </ul>
             </div>
+            ) : null}
 
             <Cta href={quotePathFor(locale)} variant="onDeep" className="mt-6">
               {chrome.quoteCta}

@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Private Transfer Across Italy — the design system.
+ * Italy Way Transfers — the design system.
  *
  * One palette for the whole site. Future city, airport, port and route pages
  * draw from exactly these tokens; nothing gets a palette of its own, because

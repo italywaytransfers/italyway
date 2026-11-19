@@ -1,5 +1,5 @@
 -- ============================================================================
--- Private Transfer Across Italy — lead schema, first migration.
+-- Italy Way Transfers — lead schema, first migration.
 --
 -- Run this in the SQL editor of THIS SITE'S OWN Supabase project. It must not
 -- be run against the Italy Taxi Service project: these are separate systems
