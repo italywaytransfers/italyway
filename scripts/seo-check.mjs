@@ -22,7 +22,7 @@
  * following it would hide exactly that.
  */
 
-const PRODUCTION_ORIGIN = "https://privatetransfersacrossitaly.com";
+const PRODUCTION_ORIGIN = "https://italywaytransfers.com";
 
 /**
  * The three policy pages, both languages. Published and indexable since
@@ -53,7 +53,7 @@ const FORBIDDEN_HOSTS = [
   ".vercel.app",
   ".netlify.app",
   ".pages.dev",
-  "www.privatetransfersacrossitaly.com",
+  "www.italywaytransfers.com",
 ];
 
 const base = (process.argv[2] ?? "http://localhost:3000").replace(/\/+$/, "");

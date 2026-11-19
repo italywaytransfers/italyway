@@ -16,7 +16,7 @@ import type { LocalizedLegal } from "./types";
  * verify in thirty seconds with their own developer tools.
  *
  * ── Two things named rather than hedged ───────────────────────────────────
- * The controller is Private Transfers Across Italy, operated by an
+ * The controller is Italy Way Transfers, operated by an
  * individual, established outside the EU/EEA; that is the owner's decision
  * about what to publish, and no personal name, postal address or company
  * registration is claimed. §13 points a complaint at the authority where the
@@ -72,7 +72,7 @@ export const privacy: LocalizedLegal = {
         id: "controller",
         heading: "2. Who is responsible for your information",
         paragraphs: [
-          "Private Transfers Across Italy is responsible for the personal information handled through this website. It is operated and managed by an individual rather than by a company, and that person deals with your enquiry personally: the correspondence, the quotation and the arrangements for your journey.",
+          "Italy Way Transfers is responsible for the personal information handled through this website. It is operated and managed by an individual rather than by a company, and that person deals with your enquiry personally: the correspondence, the quotation and the arrangements for your journey.",
           "We are established outside the European Union and the European Economic Area.",
           "Write to us at the address below with any question or request about your information. It reaches us directly and it is answered.",
         ],
@@ -313,7 +313,7 @@ export const privacy: LocalizedLegal = {
         id: "titolare",
         heading: "2. Chi risponde dei vostri dati",
         paragraphs: [
-          "Private Transfers Across Italy risponde dei dati personali trattati attraverso questo sito. È gestito da una persona fisica e non da una società, ed è quella persona a seguire personalmente la vostra richiesta: la corrispondenza, il preventivo e l'organizzazione del viaggio.",
+          "Italy Way Transfers risponde dei dati personali trattati attraverso questo sito. È gestito da una persona fisica e non da una società, ed è quella persona a seguire personalmente la vostra richiesta: la corrispondenza, il preventivo e l'organizzazione del viaggio.",
           "Siamo stabiliti fuori dall'Unione europea e dallo Spazio economico europeo.",
           "Scriveteci all'indirizzo qui sotto per qualsiasi domanda o richiesta sui vostri dati. Arriva direttamente a noi e riceve risposta.",
         ],

@@ -32,7 +32,7 @@ export default {
   // organisation is then the author in structured data).
   author: {
     id: "team",
-    full_name: "Private Transfers Across Italy",
+    full_name: "Italy Way Transfers",
     bio: null,
     avatar_url: null,
   },

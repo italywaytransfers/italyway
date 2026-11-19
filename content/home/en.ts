@@ -16,7 +16,7 @@ import type { HomeContent } from "./types";
  */
 export const en: HomeContent = {
   meta: {
-    title: "Private Transfers Across Italy | Airports, Cities, Ports",
+    title: "Italy Way Transfers | Airports, Cities and Cruise Ports",
     description:
       "Private car and driver across Italy: airport transfers, city-to-city journeys, cruise ports, day trips and cross-border routes. Every journey quoted.",
   },
@@ -453,7 +453,7 @@ export const en: HomeContent = {
       "Journeys are quoted individually and are subject to confirmation. A quotation request is not a booking.",
     contactHeading: "Contact",
     followHeading: "Follow us",
-    followOn: "Private Transfers Across Italy on {network} (opens in a new tab)",
+    followOn: "Italy Way Transfers on {network} (opens in a new tab)",
     whatsappLabel: "Message us on WhatsApp",
   },
 };

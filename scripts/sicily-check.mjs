@@ -31,7 +31,7 @@
  */
 
 const BASE = process.argv[2] ?? "http://localhost:3000";
-const PROD = "https://privatetransfersacrossitaly.com";
+const PROD = "https://italywaytransfers.com";
 
 let pass = 0;
 let fail = 0;

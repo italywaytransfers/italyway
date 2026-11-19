@@ -454,7 +454,7 @@ export const it: HomeContent = {
       "I viaggi si preventivano singolarmente e restano soggetti a conferma. Una richiesta di preventivo non è una prenotazione.",
     contactHeading: "Contatti",
     followHeading: "Seguici",
-    followOn: "Private Transfers Across Italy su {network} (si apre in una nuova scheda)",
+    followOn: "Italy Way Transfers su {network} (si apre in una nuova scheda)",
     whatsappLabel: "Scrivici su WhatsApp",
   },
 };

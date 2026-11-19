@@ -1,0 +1,56 @@
+<!--
+  Italy Way Transfers — the horizontal lockup.
+
+  The same road as app/icon.svg, set beside the name. This is the vector
+  source; scripts/build-brand-assets.mjs rasterises it to the PNGs the site
+  and the lead emails load, so the logo can be regenerated at any size
+  instead of being a binary nobody can edit.
+
+  Sized for how it is used rather than how it looks alone: the header
+  renders it 32-40px tall and the CRM sidebar 28px. So the name is set large
+  in the canvas, "TRANSFERS" is letterspaced to the exact width of the line
+  above it rather than shrunk, and the canvas is trimmed to the artwork —
+  padding inside the file would only make the whole thing render smaller
+  wherever it is constrained by height.
+
+  The tricolore is the rule between the two lines. On the icon it is the
+  road's centre markings; here it is the line the name sits on. In both it
+  is doing a job, which is the difference between a flag and a sticker.
+
+  Transparent background on purpose: every place it appears gives it its own
+  light panel, including inside the dark footer, so a baked-in white box
+  would show its edges.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="372" height="105" viewBox="0 0 372 105" role="img" aria-label="Italy Way Transfers">
+  <defs>
+    <clipPath id="lockup-way">
+      <path d="M17 88 C 23 67, 31 51, 40 32 L 49 32 C 55 52, 63 68, 69 88 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- The mark. -->
+  <rect x="5" y="12" width="76" height="81" rx="18" fill="#f4f0e6"/>
+  <path d="M17 88 C 23 67, 31 51, 40 32 L 49 32 C 55 52, 63 68, 69 88 Z" fill="#1d3448"/>
+  <g clip-path="url(#lockup-way)">
+    <rect x="42.4" y="33" width="2.6" height="10" fill="#008C45"/>
+    <rect x="41.5" y="49" width="4.2" height="13" fill="#FFFFFF"/>
+    <rect x="40.1" y="68" width="6.6" height="24" fill="#CD212A"/>
+  </g>
+  <rect x="32" y="26" width="26" height="3.4" rx="1.7" fill="#b8832f"/>
+
+  <!-- The name. "Italy" in brass, "Way" in navy: the weight goes on the
+       word the brand actually turns on. The explicit dx is there because a
+       plain space between tspans kerns tight enough to read "ItalyWay". -->
+  <text x="96" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">
+    <tspan fill="#b8832f">Italy</tspan><tspan dx="12" fill="#15304f">Way</tspan>
+  </text>
+
+  <!-- The rule, in three equal bands. -->
+  <g>
+    <rect x="96" y="62" width="88" height="3.4" fill="#008C45"/>
+    <rect x="184" y="62" width="88" height="3.4" fill="#ded8ca"/>
+    <rect x="272" y="62" width="88" height="3.4" fill="#CD212A"/>
+  </g>
+
+  <text x="96" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="23" letter-spacing="15.1" fill="#15304f">TRANSFERS</text>
+</svg>

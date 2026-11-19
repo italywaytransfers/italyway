@@ -24,7 +24,7 @@
  * `NEXT_PUBLIC_SITE_URL` is only needed to point a staging or preview build
  * somewhere else.
  */
-export const productionUrl = "https://privatetransfersacrossitaly.com";
+export const productionUrl = "https://italywaytransfers.com";
 
 const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
 
@@ -46,7 +46,7 @@ export const siteUrl = (
  * It is now also shown in the site footer, so it is genuinely site-wide:
  * one constant, so the legal pages and the footer cannot drift apart.
  */
-export const contactEmail = "privatetransfersacrossitaly@gmail.com";
+export const contactEmail = "italywaytransfers@gmail.com";
 
 /**
  * The business's social profiles, shown as icons in the footer.
@@ -55,6 +55,14 @@ export const contactEmail = "privatetransfersacrossitaly@gmail.com";
  * was supplied as: that link redirects here through Pinterest's shortener and
  * appends an invite code and the sharing account's id, neither of which
  * belongs in a public link.
+ *
+ * ── These still carry the old brand's handles ─────────────────────────────
+ * The 19 November 2026 rename to Italy Way Transfers did not touch them, and
+ * deliberately so: these are addresses of real accounts, and inventing
+ * `instagram.com/italywaytransfers` would put a link to a profile that may
+ * not exist in the footer of every page on the site. Rename or recreate the
+ * accounts first, then change the two strings below — a broken social link
+ * is worse than one whose handle lags the brand.
  */
 export const socialProfiles = [
   { network: "instagram", name: "Instagram", href: "https://www.instagram.com/privatetransfersacrossitaly/" },
@@ -85,20 +93,28 @@ export const whatsappHref = `https://wa.me/${whatsappNumber}`;
 
 /**
  * The brand as the public website presents it: titles, Open Graph, the
- * Organization and WebSite structured data, the header and footer. Plural,
- * matching the domain (privatetransfersacrossitaly.com) and the contact
- * address. Standardised on 10 November 2026.
+ * Organization and WebSite structured data, the header and footer.
+ *
+ * Renamed to Italy Way Transfers on 19 November 2026, with the move to
+ * italywaytransfers.com.
  */
-export const publicSiteName = "Private Transfers Across Italy";
+export const publicSiteName = "Italy Way Transfers";
 
 /**
  * The name used by the CRM and the lead-notification emails.
  *
- * Kept at its original spelling on purpose: the public-site brand change of
- * 10 November 2026 was scoped to the website, and the CRM and outgoing email
- * branding were to stay as they were. Public pages use `publicSiteName`.
+ * These were deliberately a different spelling from the public site for a
+ * while: the 10 November 2026 change was scoped to the website and left the
+ * CRM and outgoing mail alone. The 19 November rename was not scoped that
+ * way — the owner asked for one name everywhere, emails included — so the
+ * two constants now hold the same string.
+ *
+ * Both are kept rather than collapsed into one, because they answer
+ * different questions. `publicSiteName` is what the public is told the
+ * business is called; `siteName` is what internal tooling and outgoing mail
+ * sign themselves as. They happen to match today and may not always.
  */
-export const siteName = "Private Transfer Across Italy";
+export const siteName = "Italy Way Transfers";
 
 /**
  * One sentence, used for metadata and for the organisation's description in

@@ -65,7 +65,7 @@ export default async function CrmLoginPage({
           </h1>
           <p className="mt-4 type-small text-muted-foreground">
             This area holds customer enquiries. It is for the administrator of
-            Private Transfer Across Italy.
+            Italy Way Transfers.
           </p>
 
           <LoginForm signedOut={signedOut} />

@@ -1,17 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<!--
+  Italy Way Transfers — the app mark.
+
+  The idea is the name: a *way*. A road runs from the viewer into the
+  distance, narrowing as it goes, and the dashes down its centre line are
+  the tricolore, bottom to top: green, white, red. The flag is not stuck on
+  beside the mark, it is the markings of the road itself — the one place an
+  Italian road and an Italian flag are honestly the same object.
+
+  The road is dark on a light tile rather than the reverse. The first
+  version had a pale road, and the white of the tricolore disappeared into
+  it, which left a flag with a colour missing. Dark asphalt gives all three
+  somewhere to sit, and an ivory tile is also the rarer thing in a browser
+  tab full of dark favicons.
+
+  Drawn rather than photographed, on purpose. The logo this replaces was a
+  collage of stock monuments and a car: it cannot survive a 16px favicon, an
+  email client with images turned off, or a one-colour print. This is a
+  single shape in four flat colours, so it holds at every size the site uses.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Italy Way Transfers">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#20304f"/>
-      <stop offset="1" stop-color="#18233a"/>
-    </linearGradient>
+    <!-- Everything painted on the road is clipped to it, so a centre line
+         can never spill over an edge at any size. -->
+    <clipPath id="way">
+      <path d="M104 454 C 142 336, 192 250, 248 146 L 300 146 C 334 252, 376 338, 412 454 Z"/>
+    </clipPath>
   </defs>
-  <rect width="512" height="512" rx="96" fill="url(#g)"/>
-  <text x="256" y="322" text-anchor="middle"
-        font-family="Georgia, 'Times New Roman', serif" font-size="248"
-        font-weight="700" fill="#c0864f" letter-spacing="-6">PT</text>
-  <g>
-    <rect x="146" y="372" width="73.3" height="26" fill="#008C45"/>
-    <rect x="219.3" y="372" width="73.4" height="26" fill="#F4F5F0"/>
-    <rect x="292.7" y="372" width="73.3" height="26" fill="#CD212A"/>
+
+  <rect width="512" height="512" rx="104" fill="#f4f0e6"/>
+
+  <!-- The way. -->
+  <path d="M104 454 C 142 336, 192 250, 248 146 L 300 146 C 334 252, 376 338, 412 454 Z"
+        fill="#1d3448"/>
+
+  <g clip-path="url(#way)">
+    <!-- Centre line, tricolore, growing toward the viewer. Three dashes,
+         not four: a fourth repeats the green and the flag stops reading as
+         a flag. Running from the horizon forward it is green, white, red —
+         the tricolore's own order mapped onto depth, with the nearest and
+         largest mark the red one. The growth in size is what carries the
+         perspective; the road edges alone would not. -->
+    <rect x="268" y="152" width="12" height="54" fill="#008C45"/>
+    <rect x="263" y="232" width="20" height="74" fill="#FFFFFF"/>
+    <rect x="255" y="334" width="33" height="132" fill="#CD212A"/>
   </g>
+
+  <!-- The horizon: the far end of the way, in brass. -->
+  <rect x="212" y="128" width="128" height="14" rx="7" fill="#b8832f"/>
 </svg>

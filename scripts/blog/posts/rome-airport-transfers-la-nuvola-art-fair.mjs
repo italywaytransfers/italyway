@@ -48,7 +48,7 @@ export default {
   author: {
     id: "bareera",
     full_name: "Bareera",
-    bio: "Bareera writes the blog for Private Transfers Across Italy. She works as a driver, and gathers what she learns on the road about airports, stations, venues and traffic in Italy's cities, then turns it into practical guides for travellers planning their journeys.",
+    bio: "Bareera writes the blog for Italy Way Transfers. She works as a driver, and gathers what she learns on the road about airports, stations, venues and traffic in Italy's cities, then turns it into practical guides for travellers planning their journeys.",
     avatar_url: null,
   },
 

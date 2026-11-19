@@ -69,7 +69,7 @@ export const terms: LocalizedLegal = {
         id: "what-this-is",
         heading: "2. What this website is",
         paragraphs: [
-          "Private Transfers Across Italy is an independent service that arranges private transfers in Italy. It is operated and managed by an individual rather than by a company, and that person handles your enquiry personally from first message to completed journey.",
+          "Italy Way Transfers is an independent service that arranges private transfers in Italy. It is operated and managed by an individual rather than by a company, and that person handles your enquiry personally from first message to completed journey.",
           "We publish what is actually known about reaching places by road — where a vehicle may go, where it may stop, and which authority says so — we take the details of your journey, and we arrange it with a transfer company near the route.",
           "We do not own vehicles, we do not employ drivers and we do not carry passengers ourselves. The journey is carried out by a local transfer company, which is identified to you before you confirm.",
         ],
@@ -298,7 +298,7 @@ export const terms: LocalizedLegal = {
         id: "che-cos-e",
         heading: "2. Che cos'è questo sito",
         paragraphs: [
-          "Private Transfers Across Italy è un servizio indipendente che organizza transfer privati in Italia. È gestito da una persona fisica e non da una società, ed è quella persona a seguire personalmente la vostra richiesta, dal primo messaggio al viaggio concluso.",
+          "Italy Way Transfers è un servizio indipendente che organizza transfer privati in Italia. È gestito da una persona fisica e non da una società, ed è quella persona a seguire personalmente la vostra richiesta, dal primo messaggio al viaggio concluso.",
           "Pubblichiamo ciò che si sa davvero sul raggiungere i luoghi su strada — dove un veicolo può andare, dove può fermarsi e chi lo stabilisce — raccogliamo i dati del vostro viaggio e lo organizziamo con un'azienda di transfer della zona.",
           "Non possediamo veicoli, non impieghiamo conducenti e non trasportiamo noi stessi passeggeri. Il viaggio è effettuato da un'azienda di transfer locale, che vi viene indicata prima della conferma.",
         ],
