@@ -790,3 +790,106 @@ export type NaplesCruisePort = PageChrome & {
     items: { page: PageId; label: string; detail: string }[];
   };
 };
+
+/* ── Sorrento: the peninsula, not the coast ───────────────────────────── */
+
+/**
+ * Sorrento's page is built around the one correction that helps a reader most.
+ *
+ * Sorrento is routinely sold as "the Amalfi Coast", and it is not on it. It
+ * sits on the northern side of the Sorrentine peninsula, facing the Bay of
+ * Naples and Vesuvius; Positano and Amalfi are on the southern side, facing
+ * the Tyrrhenian. Getting between the two means crossing the peninsula, which
+ * is why a journey that looks short on a map is not. Every section below
+ * exists to make that one fact useful rather than to repeat it.
+ *
+ * ── Why this type is not a copy of PositanoDestination ───────────────────
+ * Positano's page is organised around a charge: a rate card, what paying does
+ * not buy, and how to pay it. Sorrento has no such charge to explain. Its
+ * restriction is a seasonal evening ZTL with four named gates, which is a
+ * table of places rather than a table of prices, and its real difficulty is
+ * orientation. Reusing Positano's shape would have forced a rate card onto a
+ * page with no rates, so the sections differ.
+ */
+export type SorrentoDestination = PageChrome & {
+  hero: {
+    eyebrow: string;
+    h1: string;
+    lead: string;
+    primaryCta: string;
+    secondaryCta: string;
+    /** The orientation strip: which water each place faces. */
+    bearings: {
+      heading: string;
+      items: { id: string; label: string; value: string }[];
+    };
+  };
+  /**
+   * The comparison that the rest of the internet blurs. Deliberately a table:
+   * three places, the same four questions, answered side by side.
+   */
+  orientation: {
+    id: string;
+    eyebrow: string;
+    heading: string;
+    lead: string;
+    caption: string;
+    columns: string[];
+    rows: { id: string; cells: string[]; page?: PageId }[];
+    note: string;
+  };
+  /** What actually calls at Sorrento, and what does not. */
+  arriving: {
+    id: string;
+    eyebrow: string;
+    heading: string;
+    lead: string;
+    caption: string;
+    columns: string[];
+    rows: { id: string; cells: string[]; page?: PageId }[];
+    note: string;
+    sources: Source[];
+  };
+  /**
+   * The ZTL. A table of gates rather than of charges, plus the hours and the
+   * permit rule. `season` carries the period the cited notice covers, because
+   * this restriction is seasonal and a year-less statement of it would age
+   * into a falsehood.
+   */
+  ztl: {
+    id: string;
+    eyebrow: string;
+    heading: string;
+    lead: string;
+    season: string;
+    hours: { id: string; label: string; value: string }[];
+    caption: string;
+    columns: string[];
+    rows: { id: string; cells: string[] }[];
+    permit: { heading: string; body: string };
+    currency: { heading: string; body: string };
+    source: Source;
+  };
+  /** What to have ready before asking for a quotation. */
+  checklist: {
+    id: string;
+    eyebrow: string;
+    heading: string;
+    lead: string;
+    groups: {
+      id: string;
+      heading: string;
+      items: { id: string; label: string; detail: string }[];
+    }[];
+    note: string;
+  };
+  ownerClaim: OwnerClaim;
+  onward: {
+    id: string;
+    eyebrow: string;
+    heading: string;
+    lead: string;
+    items: { id: string; page: PageId; label: string; detail: string }[];
+    pending: { heading: string; body: string };
+  };
+};

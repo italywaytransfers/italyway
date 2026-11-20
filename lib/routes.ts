@@ -75,6 +75,7 @@ export type PageId =
   | "caserta"
   | "pompeii"
   | "positano"
+  | "sorrento"
   | "amalfi"
   | "nap-airport"
   | "ravello"
@@ -112,6 +113,7 @@ export type PageId =
   // "<airport> to <town>" query, which the Sicily keyword table leaves
   // unclaimed: town pages may not target airport queries, and airport pages
   // own only "<airport> transfers".
+  | "route-nap-sorrento"
   | "route-cta-taormina"
   | "route-cta-syracuse"
   | "route-pmo-cefalu"
@@ -648,12 +650,29 @@ const pages: Record<PageId, PageRecord> = {
     priority: 0.7,
   },
 
+  // ── Sorrento ──────────────────────────────────────────────────────────
+  // Added 20 November 2026, and the reason it was missing is worth keeping:
+  // the Stage 2D audit recorded that "Sorrento's municipal site is
+  // unreachable from this environment", so the ZTL could not be read and the
+  // page was not written rather than written from hearsay.
+  //
+  // That blocker is gone. comune.sorrento.na.it now responds, and its ZTL
+  // notice supplied the season, the hours, the four electronic gates and the
+  // permit rule, all cited in content/campania/sorrento.ts. The one fact
+  // still unread is EAV's timetable, so the page states none.
+  //
+  // Same slug in both languages; only the path prefix localizes.
+  sorrento: {
+    path: { en: "/destinations/sorrento", it: "/it/destinazioni/sorrento" },
+    parent: "naples",
+    published: true,
+    priority: 0.7,
+  },
+
   // ── Amalfi (Stage 2E) ─────────────────────────────────────────────────
   // Same slug in both languages, so only the path prefix localizes. Parented
-  // to `naples` like the rest of the cluster. Sorrento, Ravello and Salerno
-  // city remain absent: Sorrento's municipal site is unreachable from this
-  // environment and the other two have unread ordinances. See the Stage 2D
-  // audit.
+  // to `naples` like the rest of the cluster. Salerno city remains absent:
+  // its ordinance is still unread. See the Stage 2D audit.
   amalfi: {
     path: { en: "/destinations/amalfi", it: "/it/destinazioni/amalfi" },
     parent: "naples",
@@ -929,6 +948,23 @@ const pages: Record<PageId, PageRecord> = {
   "messina-cruise-port": {
     path: { en: "/cruise-ports/messina", it: "/it/porti-crociere/messina" },
     parent: "sicily",
+    published: true,
+    priority: 0.8,
+  },
+
+  // ── Naples airport → Sorrento ─────────────────────────────────────────
+  // Parented to `nap-airport`, so the breadcrumb runs Home → Naples →
+  // Naples airport → route and passes the hub on the way, matching how the
+  // Sicily routes hang off their airports.
+  //
+  // Priority 0.8, as the other route pages: a commercial route page is
+  // worth more than a destination page and less than the homepage.
+  "route-nap-sorrento": {
+    path: {
+      en: "/routes/naples-airport-to-sorrento",
+      it: "/it/tratte/aeroporto-napoli-sorrento",
+    },
+    parent: "nap-airport",
     published: true,
     priority: 0.8,
   },

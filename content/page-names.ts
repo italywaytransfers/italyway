@@ -153,6 +153,11 @@ export const pageNames: Record<PageId, Record<Locale, string>> = {
   // Pompeii in English, Pompei in Italian — the Naples/Napoli rule again.
   pompeii: { en: "Pompeii", it: "Pompei" },
   positano: { en: "Positano", it: "Positano" },
+  sorrento: { en: "Sorrento", it: "Sorrento" },
+  "route-nap-sorrento": {
+    en: "Naples Airport to Sorrento",
+    it: "Aeroporto di Napoli–Sorrento",
+  },
   amalfi: { en: "Amalfi", it: "Amalfi" },
   "nap-airport": { en: "Capodichino", it: "Capodichino" },
   ravello: { en: "Ravello", it: "Ravello" },
