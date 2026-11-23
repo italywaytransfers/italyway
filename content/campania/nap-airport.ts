@@ -405,6 +405,12 @@ const en: NaplesAirport = {
           "The quay to name if the airport is one end of a journey that begins or ends on a ship.",
       },
       {
+        page: "route-nap-sorrento",
+        label: "This airport to Sorrento",
+        detail:
+          "The route page for the journey most people arriving here are making, and the two controlled zones it crosses.",
+      },
+      {
         page: "salerno-airport",
         label: "Salerno Costa d'Amalfi Airport (QSR)",
         detail:
@@ -794,6 +800,12 @@ const it: NaplesAirport = {
         label: "Il terminal crociere alla Stazione Marittima",
         detail:
           "La banchina da indicare se l'aeroporto è un capo di un viaggio che inizia o finisce su una nave.",
+      },
+      {
+        page: "route-nap-sorrento",
+        label: "Da questo aeroporto a Sorrento",
+        detail:
+          "La pagina della tratta che quasi tutti compiono arrivando qui, e le due zone controllate che attraversa.",
       },
       {
         page: "salerno-airport",

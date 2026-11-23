@@ -157,6 +157,12 @@ const en: NaplesHub = {
           "The region's other airport, run by the same operator — and one that closes its terminal overnight.",
       },
       {
+        page: "sorrento",
+        label: "Transfers to Sorrento",
+        detail:
+          "The peninsula town most people mean when they say the Amalfi Coast, which it is not on.",
+      },
+      {
         page: "positano",
         label: "Transfers to Positano",
         detail:
@@ -354,6 +360,12 @@ const it: NaplesHub = {
         label: "Aeroporto di Salerno Costa d'Amalfi (QSR)",
         detail:
           "L'altro aeroporto della regione, dello stesso gestore, e che di notte chiude il terminal.",
+      },
+      {
+        page: "sorrento",
+        label: "Transfer per Sorrento",
+        detail:
+          "La cittadina della penisola che quasi tutti chiamano Costiera Amalfitana, dove però non si trova.",
       },
       {
         page: "positano",

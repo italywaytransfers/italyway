@@ -14,6 +14,9 @@ import type { Locale } from "@/lib/site";
  */
 export const pageNames: Record<PageId, Record<Locale, string>> = {
   home: { en: "Home", it: "Home" },
+  lazio: { en: "Lazio", it: "Lazio" },
+  tivoli: { en: "Tivoli", it: "Tivoli" },
+  frascati: { en: "Frascati", it: "Frascati" },
   rome: { en: "Rome", it: "Roma" },
   fiumicino: { en: "Fiumicino (FCO)", it: "Fiumicino (FCO)" },
   ciampino: { en: "Ciampino (CIA)", it: "Ciampino (CIA)" },
@@ -154,6 +157,34 @@ export const pageNames: Record<PageId, Record<Locale, string>> = {
   pompeii: { en: "Pompeii", it: "Pompei" },
   positano: { en: "Positano", it: "Positano" },
   sorrento: { en: "Sorrento", it: "Sorrento" },
+  "rome-hotel-transfers": {
+    en: "Hotel transfers",
+    it: "Transfer dagli hotel",
+  },
+  "route-rome-frascati": {
+    en: "Rome to Frascati",
+    it: "Roma–Frascati",
+  },
+  "route-rome-tivoli": {
+    en: "Rome to Tivoli",
+    it: "Roma–Tivoli",
+  },
+  "route-civ-rome": {
+    en: "Civitavecchia to Rome",
+    it: "Civitavecchia–Roma",
+  },
+  "route-civ-fco": {
+    en: "Civitavecchia to Fiumicino",
+    it: "Civitavecchia–Fiumicino",
+  },
+  "route-rome-fco": {
+    en: "Rome to Fiumicino Airport",
+    it: "Roma–aeroporto di Fiumicino",
+  },
+  "route-rome-cia": {
+    en: "Rome to Ciampino Airport",
+    it: "Roma–aeroporto di Ciampino",
+  },
   "route-nap-sorrento": {
     en: "Naples Airport to Sorrento",
     it: "Aeroporto di Napoli–Sorrento",

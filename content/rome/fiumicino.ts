@@ -143,6 +143,11 @@ const en: AirportHub = {
     lead: "The journeys most often asked about from this airport.",
     items: [
       {
+        page: "route-rome-fco",
+        label: "Rome to Fiumicino Airport",
+        detail: "The departure, timed backwards from check-in rather than a landing.",
+      },
+      {
         page: "route-fco-rome",
         label: "Fiumicino Airport to Rome",
         detail: "The city address at the other end is the harder half.",
@@ -341,6 +346,11 @@ const it: AirportHub = {
     heading: "Da Fiumicino verso",
     lead: "Le tratte di cui ci si chiede più spesso partendo da questo aeroporto.",
     items: [
+      {
+        page: "route-rome-fco",
+        label: "Da Roma all'aeroporto di Fiumicino",
+        detail: "La partenza, calcolata a ritroso dal check-in e non da un atterraggio.",
+      },
       {
         page: "route-fco-rome",
         label: "Dall'aeroporto di Fiumicino a Roma",

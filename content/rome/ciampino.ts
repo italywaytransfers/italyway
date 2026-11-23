@@ -123,6 +123,11 @@ const en: SecondAirport = {
     heading: "From Ciampino to",
     items: [
       {
+        page: "route-rome-cia",
+        label: "Rome to Ciampino Airport",
+        detail: "The departure, and why naming the right Rome airport matters.",
+      },
+      {
         page: "route-cia-rome",
         label: "Ciampino Airport to Rome",
         detail: "The short run into the city, and what decides it.",
@@ -295,6 +300,11 @@ const it: SecondAirport = {
     id: "proseguimenti",
     heading: "Da Ciampino verso",
     items: [
+      {
+        page: "route-rome-cia",
+        label: "Da Roma all'aeroporto di Ciampino",
+        detail: "La partenza, e perché conta indicare l'aeroporto romano giusto.",
+      },
       {
         page: "route-cia-rome",
         label: "Dall'aeroporto di Ciampino a Roma",

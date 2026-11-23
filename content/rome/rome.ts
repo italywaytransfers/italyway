@@ -78,7 +78,7 @@ const en: RomeHub = {
     heading: "What decides where a car can stop",
     lead: "Much of central Rome is a limited-traffic zone. It is the single thing most likely to change where a door-to-door journey really ends.",
     paragraphs: [
-      "A zona a traffico limitato — ZTL — is an area that unauthorised vehicles may not enter during published hours. Cameras at the entrances read number plates. It is not a parking restriction: it governs whether a vehicle may be on the street at all.",
+      "A zona a traffico limitato — ZTL — is an area the city reserves for authorised vehicles during published hours. It is not a parking restriction: it governs whether a vehicle may be on the street at all.",
       "The city's mobility agency lists five zones in the centre: Centro Storico, which has both a daytime and a night-time zone; Tridente; Trastevere, likewise day and night; San Lorenzo; and Testaccio. Among the categories permitted to enter, the agency names taxis and cars for hire with driver — noleggio con conducente, the category a private transfer belongs to.",
       "Permission to enter a zone is not the same as a street a car can use. Lanes in the centre are narrow, many are pedestrian, some close for works, markets or events, and no permit widens a road. For an address inside the centre the practical answer is often an agreed point a short walk away — which is a detail worth settling when the journey is arranged, not on the morning itself.",
     ],
@@ -179,6 +179,11 @@ const en: RomeHub = {
         page: "rome-stations",
         label: "Rome's railway stations",
         detail: "Termini, Tiburtina, Ostiense and San Pietro.",
+      },
+      {
+        page: "rome-hotel-transfers",
+        label: "Hotel transfers in Rome",
+        detail: "What a pickup from your accommodation needs, and where you will be met.",
       },
     ],
   },
@@ -310,7 +315,7 @@ const it: RomeHub = {
     heading: "Che cosa stabilisce dove un'auto può fermarsi",
     lead: "Gran parte del centro di Roma è zona a traffico limitato. È l'elemento che più di ogni altro può spostare il punto in cui finisce davvero un viaggio porta a porta.",
     paragraphs: [
-      "Una ZTL è un'area in cui i veicoli non autorizzati non possono entrare negli orari pubblicati, con telecamere ai varchi che leggono le targhe. Non è una regola di sosta: riguarda la possibilità stessa di percorrere quelle strade.",
+      "Una ZTL è un'area che il Comune riserva ai soli veicoli autorizzati negli orari pubblicati. Non è una regola di sosta: riguarda la possibilità stessa di percorrere quelle strade.",
       "L'agenzia per la mobilità del Comune elenca cinque zone nel centro: Centro Storico, con una fascia diurna e una notturna; Tridente; Trastevere, anch'essa diurna e notturna; San Lorenzo; e Testaccio. Fra le categorie ammesse l'agenzia indica espressamente i taxi e le auto a noleggio con conducente (NCC), che è la categoria cui appartiene un transfer privato.",
       "Poter entrare in una zona, però, non significa che esista una strada percorribile. I vicoli del centro sono stretti, molti sono pedonali, alcuni chiudono per lavori, mercati o eventi, e nessun permesso allarga una carreggiata. Per un indirizzo in centro la soluzione concreta è spesso un punto concordato a pochi passi: un dettaglio da sistemare quando si organizza il viaggio, non la mattina stessa.",
     ],
@@ -411,6 +416,11 @@ const it: RomeHub = {
         page: "rome-stations",
         label: "Le stazioni ferroviarie di Roma",
         detail: "Termini, Tiburtina, Ostiense e San Pietro.",
+      },
+      {
+        page: "rome-hotel-transfers",
+        label: "Transfer dagli hotel di Roma",
+        detail: "Che cosa serve per un prelievo in struttura, e dove verrete presi.",
       },
     ],
   },

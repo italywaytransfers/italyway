@@ -105,6 +105,16 @@ const en: CruisePort = {
     lead: "The two journeys almost everyone arriving here needs, and the pages behind them.",
     items: [
       {
+        page: "route-civ-rome",
+        label: "Civitavecchia cruise port to Rome",
+        detail: "Leaving the ship: the gate, the shuttle and where a car can be.",
+      },
+      {
+        page: "route-civ-fco",
+        label: "Civitavecchia to Fiumicino Airport",
+        detail: "Cruise to flight, with two timetables that never meet.",
+      },
+      {
         page: "route-rome-civitavecchia",
         label: "Rome to Civitavecchia cruise port",
         detail: "Sailing day, counted backwards from all-aboard time.",
@@ -260,6 +270,16 @@ const it: CruisePort = {
     heading: "Da e per il porto",
     lead: "I due viaggi di cui ha bisogno quasi chiunque arrivi qui, e le pagine che li spiegano.",
     items: [
+      {
+        page: "route-civ-rome",
+        label: "Dal porto di Civitavecchia a Roma",
+        detail: "Lasciare la nave: il varco, la navetta e dove può stare un'auto.",
+      },
+      {
+        page: "route-civ-fco",
+        label: "Da Civitavecchia all'aeroporto di Fiumicino",
+        detail: "Dalla crociera al volo, con due orari che non si incontrano.",
+      },
       {
         page: "route-rome-civitavecchia",
         label: "Da Roma al porto di Civitavecchia",

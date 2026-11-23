@@ -424,8 +424,15 @@ export function buildNavigation(locale: Locale): NavEntry[] {
           id: "rome-and-lazio",
           heading: s.romeAndLazio,
           items: [
+            // The regional pillar heads its own group, as the group's name
+            // always implied. Added 23 November 2026 with the Lazio hub;
+            // before that this menu named the region and linked only cities.
+            page("lazio"),
             page("rome"),
             page("rome-stations"),
+            page("rome-hotel-transfers"),
+            page("tivoli"),
+            page("frascati"),
             page("civitavecchia"),
           ],
         },

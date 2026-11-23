@@ -28,6 +28,7 @@ export type PageId =
   | "ciampino"
   | "civitavecchia"
   | "rome-stations"
+  | "rome-hotel-transfers"
   | "route-fco-rome"
   | "route-cia-rome"
   | "route-rome-civitavecchia"
@@ -72,6 +73,9 @@ export type PageId =
   | "naples"
   | "salerno-airport"
   | "naples-cruise-port"
+  | "lazio"
+  | "tivoli"
+  | "frascati"
   | "caserta"
   | "pompeii"
   | "positano"
@@ -113,6 +117,12 @@ export type PageId =
   // "<airport> to <town>" query, which the Sicily keyword table leaves
   // unclaimed: town pages may not target airport queries, and airport pages
   // own only "<airport> transfers".
+  | "route-rome-tivoli"
+  | "route-rome-frascati"
+  | "route-civ-rome"
+  | "route-civ-fco"
+  | "route-rome-fco"
+  | "route-rome-cia"
   | "route-nap-sorrento"
   | "route-cta-taormina"
   | "route-cta-syracuse"
@@ -141,9 +151,54 @@ const pages: Record<PageId, PageRecord> = {
     published: true,
     priority: 1,
   },
+  // ── Lazio, the regional pillar ────────────────────────────────────────
+  // Added 23 November 2026. Sicily and Puglia already had pillars and Lazio
+  // did not: Rome hung straight off the homepage, which left the region's
+  // busiest cluster without the hub its siblings have.
+  //
+  // Adding it reparents `rome` from `home` to `lazio`, so every Lazio
+  // breadcrumb gains a level — Home → Lazio → Rome → … — exactly as Sicily
+  // and Puglia already read. That changes existing pages' BreadcrumbList
+  // output, which is the intended effect and not a side one.
+  lazio: {
+    path: { en: "/destinations/lazio", it: "/it/destinazioni/lazio" },
+    parent: "home",
+    published: true,
+    priority: 0.8,
+  },
+  // Parented to the pillar, as Puglia's and Sicily's towns are.
+  tivoli: {
+    path: { en: "/destinations/lazio/tivoli", it: "/it/destinazioni/lazio/tivoli" },
+    parent: "lazio",
+    published: true,
+    priority: 0.7,
+  },
+  // ── Frascati ──────────────────────────────────────────────────────────
+  // Added 23 November 2026. Briefly carried trailing slashes; reverted to
+  // the site convention on the same day once the effect was measured.
+  //
+  // Worth keeping, so nobody tries it again: next.config.ts does not set
+  // `trailingSlash`, so Next's default of false applies and the built site
+  // 308-redirects /path/ to /path. A slash here did not produce a
+  // trailing-slash page — it produced a canonical, an hreflang pair and a
+  // sitemap entry all pointing at a URL that redirects, while Next
+  // normalised every internal <Link> to the slashless form. The two
+  // disagreed, and scripts/seo-check.mjs failed on both counts.
+  //
+  // Trailing slashes are only coherent site-wide, via `trailingSlash: true`
+  // in next.config.ts, which would change all existing URLs too.
+  frascati: {
+    path: {
+      en: "/destinations/lazio/frascati",
+      it: "/it/destinazioni/lazio/frascati",
+    },
+    parent: "lazio",
+    published: true,
+    priority: 0.7,
+  },
   rome: {
     path: { en: "/destinations/rome", it: "/it/destinazioni/roma" },
-    parent: "home",
+    parent: "lazio",
     published: true,
     priority: 0.9,
   },
@@ -948,6 +1003,101 @@ const pages: Record<PageId, PageRecord> = {
   "messina-cruise-port": {
     path: { en: "/cruise-ports/messina", it: "/it/porti-crociere/messina" },
     parent: "sicily",
+    published: true,
+    priority: 0.8,
+  },
+
+  // ── Lazio: the four return and departure journeys ─────────────────────
+  // Added 23 November 2026, completing the Lazio grid in the direction it
+  // was missing. The outbound pages (FCO → Rome, CIA → Rome, Rome →
+  // Civitavecchia, FCO → Civitavecchia) already existed; these are their
+  // counterparts, and they are not those pages reversed.
+  //
+  // Parents follow the existing Lazio convention rather than a rule about
+  // origins: a route belongs to the specialised hub it serves. Cruise
+  // journeys hang off `civitavecchia`, airport journeys off the airport.
+  // That keeps each breadcrumb passing through the hub a reader would
+  // actually browse.
+  // Rome → Tivoli. Parented to `tivoli`, so the trail runs
+  // Home → Lazio → Tivoli → route and passes the destination hub the
+  // reader would browse.
+  // Rome → Frascati. Slashless, like every other route; see the note on
+  // `frascati` above for why a trailing slash was tried and reverted.
+  // ── Rome hotel transfers ──────────────────────────────────────────────
+  // Added 23 November 2026, filling a gap the navigation had advertised
+  // since launch: "Hotel transfers" was one of seven named services with
+  // no page behind it.
+  //
+  // A process page, not a district one. The Stage 5 audit found that
+  // per-district hotel pages would duplicate the Rome hub, which already
+  // carries the ZTL rules and six districts — and that Roma Mobilità lists
+  // NCC among the ZTL exemptions, so "can a car reach me" is one question
+  // about a process rather than eight about neighbourhoods.
+  //
+  // Parented and pathed like `rome-stations`, the page it is modelled on.
+  "rome-hotel-transfers": {
+    path: {
+      en: "/destinations/rome/hotel-transfers",
+      it: "/it/destinazioni/roma/transfer-hotel",
+    },
+    parent: "rome",
+    published: true,
+    priority: 0.7,
+  },
+
+  "route-rome-frascati": {
+    path: {
+      en: "/routes/rome-to-frascati",
+      it: "/it/tratte/roma-frascati",
+    },
+    parent: "frascati",
+    published: true,
+    priority: 0.8,
+  },
+
+  "route-rome-tivoli": {
+    path: {
+      en: "/routes/rome-to-tivoli",
+      it: "/it/tratte/roma-tivoli",
+    },
+    parent: "tivoli",
+    published: true,
+    priority: 0.8,
+  },
+
+  "route-civ-rome": {
+    path: {
+      en: "/routes/civitavecchia-to-rome",
+      it: "/it/tratte/civitavecchia-roma",
+    },
+    parent: "civitavecchia",
+    published: true,
+    priority: 0.8,
+  },
+  "route-civ-fco": {
+    path: {
+      en: "/routes/civitavecchia-to-fiumicino-airport",
+      it: "/it/tratte/civitavecchia-aeroporto-fiumicino",
+    },
+    parent: "civitavecchia",
+    published: true,
+    priority: 0.8,
+  },
+  "route-rome-fco": {
+    path: {
+      en: "/routes/rome-to-fiumicino-airport",
+      it: "/it/tratte/roma-aeroporto-fiumicino",
+    },
+    parent: "fiumicino",
+    published: true,
+    priority: 0.8,
+  },
+  "route-rome-cia": {
+    path: {
+      en: "/routes/rome-to-ciampino-airport",
+      it: "/it/tratte/roma-aeroporto-ciampino",
+    },
+    parent: "ciampino",
     published: true,
     priority: 0.8,
   },

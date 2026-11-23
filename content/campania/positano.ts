@@ -272,6 +272,12 @@ const en: PositanoDestination = {
           "The quay to name if your Positano day begins or ends on a ship.",
       },
       {
+        page: "sorrento",
+        label: "Transfers to Sorrento",
+        detail:
+          "Over the ridge on the bay side, and the usual road approach from Naples — a different coast, not a neighbour along this one.",
+      },
+      {
         page: "amalfi",
         label: "Transfers to Amalfi",
         detail:
@@ -541,6 +547,12 @@ const it: PositanoDestination = {
         label: "Il terminal crociere alla Stazione Marittima",
         detail:
           "La banchina da indicare se la vostra giornata a Positano inizia o finisce su una nave.",
+      },
+      {
+        page: "sorrento",
+        label: "Transfer per Sorrento",
+        detail:
+          "Oltre il crinale, sul versante del golfo, e la via d'accesso abituale da Napoli: un'altra costa, non un paese vicino su questa.",
       },
       {
         page: "amalfi",
