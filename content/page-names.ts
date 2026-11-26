@@ -66,11 +66,34 @@ export const pageNames: Record<PageId, Record<Locale, string>> = {
   venice: { en: "Venice", it: "Venezia" },
   verona: { en: "Verona", it: "Verona" },
   "venice-marco-polo": { en: "Marco Polo (VCE)", it: "Marco Polo (VCE)" },
+  treviso: { en: "Treviso", it: "Treviso" },
   "treviso-airport": { en: "Treviso (TSF)", it: "Treviso (TSF)" },
   "verona-airport": { en: "Villafranca (VRN)", it: "Villafranca (VRN)" },
   "venice-stations": {
     en: "Railway stations",
     it: "Stazioni ferroviarie",
+  },
+  "route-venice-verona": {
+    en: "Venice to Verona",
+    it: "Venezia–Verona",
+  },
+  "lake-garda": { en: "Lake Garda", it: "Lago di Garda" },
+  padua: { en: "Padua", it: "Padova" },
+  "route-vrn-garda": {
+    en: "Verona Airport to Lake Garda",
+    it: "Aeroporto di Verona–Lago di Garda",
+  },
+  "route-venice-padua": {
+    en: "Venice to Padua",
+    it: "Venezia–Padova",
+  },
+  "route-verona-sirmione": {
+    en: "Verona to Sirmione",
+    it: "Verona–Sirmione",
+  },
+  "route-venice-vce": {
+    en: "Venice to Marco Polo",
+    it: "Venezia–Marco Polo",
   },
   "route-vce-venice": {
     en: "Marco Polo to Venice",
@@ -247,6 +270,10 @@ export const pageNames: Record<PageId, Record<Locale, string>> = {
   "catania-cruise-port": {
     en: "Catania cruise port",
     it: "Porto crociere di Catania",
+  },
+  "venice-cruise-port": {
+    en: "Venice cruise terminals",
+    it: "Terminal crociere di Venezia",
   },
   "messina-cruise-port": {
     en: "Messina cruise port",

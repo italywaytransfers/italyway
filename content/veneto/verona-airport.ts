@@ -69,7 +69,7 @@ const en: VeronaAirport = {
       {
         id: "lake",
         heading: "Towards Lake Garda",
-        subheading: "West — and no route is published for it",
+        subheading: "West — and the town decides the journey",
         rows: [
           {
             term: "Why the lake is different",
@@ -79,18 +79,29 @@ const en: VeronaAirport = {
           {
             term: "What exists publicly",
             detail:
-              "In summer the local bus operator runs services from the airport to comuni along the lake. That is a seasonal public service, listed as context, not as something provided here.",
+              "ATV runs a seasonal bus, route 482, hourly between the airport and the lake in its operating season. That is a public service listed as context rather than something we provide, and it does not run all year.",
           },
           {
-            term: "What this page will not do",
+            term: "Which towns, exactly",
             detail:
-              "Claim that any particular Garda town can be served. Coverage has not been confirmed, so no route to the lake is published. Name the town when you ask and the answer will be about that town.",
+              "Five are confirmed: Peschiera del Garda, Lazise, Bardolino, Sirmione and Desenzano del Garda. The rest of the shoreline is not, so name the town when you ask and the answer will be about that town rather than about the lake in general.",
           },
         ],
       },
     ],
+    source: {
+      text:
+        "The seasonal bus between the airport and the lake is ATV's route 482, " +
+        "which the operator describes as running hourly between Verona Airport " +
+        "and Lake Garda, listing its stops as Catullo airport, Villafranca, " +
+        "Valeggio, Peschiera and San Benedetto. ATV gives the current season as " +
+        "ending 18 October 2026 and resuming 21 March 2027, so it is not running " +
+        "as this is written and the dates are set season by season. Read 26 " +
+        "November 2026:",
+      linkText: "ATV publishes its Lake Garda lines and timetables",
+      href: "https://www.atv.verona.it/en/LineeLago",
+    },
   },
-
   airlink: {
     id: "airlink",
     heading: "The Verona Airlink, and what it does not solve",
@@ -113,6 +124,16 @@ const en: VeronaAirport = {
         page: "route-vrn-verona",
         label: "Verona Airport to Verona",
         detail: "The short run into the city, in full.",
+      },
+      {
+        page: "route-vrn-garda",
+        label: "Verona Airport to Lake Garda",
+        detail: "The journey itself, town by town, and the return for your flight home.",
+      },
+      {
+        page: "lake-garda",
+        label: "Lake Garda transfers",
+        detail: "The five confirmed towns, named one by one.",
       },
       {
         page: "verona",
@@ -141,7 +162,7 @@ const en: VeronaAirport = {
       {
         question: "Can you take me to Lake Garda?",
         answer:
-          "Ask, and name the town. No Garda route is published on this site because coverage has not been confirmed, and the lake has two shores in two different regions. Without a town the question cannot be answered properly, and with one it usually can.",
+          "Yes, to five towns: Peschiera del Garda, Lazise, Bardolino, Sirmione and Desenzano del Garda. Name the one you mean, because the lake has two shores in two different regions. Sirmione has its own page, since a hired car may enter its historic centre only when carrying someone staying there.",
       },
       {
         question: "Is the Airlink better than a transfer?",
@@ -219,7 +240,7 @@ const it: VeronaAirport = {
       {
         id: "lago",
         heading: "Verso il Lago di Garda",
-        subheading: "A ovest — e non pubblichiamo alcuna tratta",
+        subheading: "A ovest — ed è il paese a decidere il viaggio",
         rows: [
           {
             term: "Perché il lago è diverso",
@@ -229,18 +250,29 @@ const it: VeronaAirport = {
           {
             term: "Che cosa esiste di pubblico",
             detail:
-              "D'estate l'azienda di trasporto locale collega l'aeroporto ad alcuni comuni rivieraschi. È un servizio pubblico stagionale, citato come contesto e non come qualcosa che offriamo noi.",
+              "ATV gestisce un bus stagionale, la linea 482, con cadenza oraria fra l'aeroporto e il lago nella sua stagione di esercizio. È un servizio pubblico citato come contesto e non come qualcosa che offriamo noi, e non circola tutto l'anno.",
           },
           {
-            term: "Che cosa questa pagina non farà",
+            term: "Quali paesi, esattamente",
             detail:
-              "Affermare che un determinato paese del Garda sia servito. La copertura non è stata confermata, quindi nessuna tratta verso il lago è pubblicata. Indicate il paese e la risposta parlerà di quel paese.",
+              "Cinque sono confermati: Peschiera del Garda, Lazise, Bardolino, Sirmione e Desenzano del Garda. Il resto della riva no: indicate il paese e la risposta parlerà di quel paese invece che del lago in generale.",
           },
         ],
       },
     ],
+    source: {
+      text:
+        "Il bus stagionale fra l'aeroporto e il lago è la linea 482 di ATV, che " +
+        "l'azienda descrive come collegamento a cadenza oraria fra l'aeroporto di " +
+        "Verona e il Lago di Garda, con fermate indicate ad aeroporto Catullo, " +
+        "Villafranca, Valeggio, Peschiera e San Benedetto. ATV indica la stagione " +
+        "in corso come conclusa il 18 ottobre 2026 e in ripresa dal 21 marzo 2027: " +
+        "non è quindi in servizio mentre scriviamo, e le date si fissano stagione " +
+        "per stagione. Consultato il 26 novembre 2026:",
+      linkText: "ATV pubblica le linee e gli orari del Lago di Garda",
+      href: "https://www.atv.verona.it/it/LineeLago",
+    },
   },
-
   airlink: {
     id: "airlink",
     heading: "Il Verona Airlink, e che cosa non risolve",
@@ -263,6 +295,16 @@ const it: VeronaAirport = {
         page: "route-vrn-verona",
         label: "Dall'aeroporto di Verona alla città",
         detail: "Il breve tragitto verso il centro, per esteso.",
+      },
+      {
+        page: "route-vrn-garda",
+        label: "Dall'aeroporto di Verona al Lago di Garda",
+        detail: "Il viaggio, località per località, e il ritorno per il volo.",
+      },
+      {
+        page: "lake-garda",
+        label: "Transfer sul Lago di Garda",
+        detail: "Le cinque località confermate, una per una.",
       },
       {
         page: "verona",
@@ -291,7 +333,7 @@ const it: VeronaAirport = {
       {
         question: "Mi portate sul Lago di Garda?",
         answer:
-          "Chiedetelo indicando il paese. Su questo sito non è pubblicata alcuna tratta verso il Garda perché la copertura non è stata confermata, e il lago ha due sponde in due regioni diverse. Senza il paese la domanda non si può affrontare bene; con il paese, di solito sì.",
+          "Sì, in cinque paesi: Peschiera del Garda, Lazise, Bardolino, Sirmione e Desenzano del Garda. Indicate quale intendete, perché il lago ha due sponde in due regioni diverse. Sirmione ha una pagina propria, perché un'auto a noleggio può entrare nel suo centro storico solo se trasporta chi vi soggiorna.",
       },
       {
         question: "L'Airlink è meglio di un transfer?",

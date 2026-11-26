@@ -132,6 +132,12 @@ const en: VeniceHub = {
           "A Treviso airport about 31 km from Venice, often sold under Venice's name.",
       },
       {
+        page: "venice-cruise-port",
+        label: "Venice cruise terminals",
+        detail:
+          "Marittima, Marghera and three more — and why your berth, your terminal and your car are rarely the same place.",
+      },
+      {
         page: "venice-stations",
         label: "Venice's railway stations",
         detail:
@@ -167,6 +173,30 @@ const en: VeniceHub = {
     id: "onward",
     heading: "Elsewhere in the Veneto",
     items: [
+      {
+        page: "padua",
+        label: "Transfers in Padua",
+        detail:
+          "The nearest mainland city, where a hired car is let into the restricted centre rather than kept out of it.",
+      },
+      {
+        page: "treviso",
+        label: "Transfers in Treviso",
+        detail:
+          "Half an hour north, with its own walled centre and the airport that carries its name.",
+      },
+      {
+        page: "route-venice-padua",
+        label: "Venice to Padua",
+        detail:
+          "The journey between them, in both directions, and two ends that stop a car short for opposite reasons.",
+      },
+      {
+        page: "route-venice-verona",
+        label: "Venice to Verona",
+        detail:
+          "The journey between them, and the two unrelated restrictions at either end.",
+      },
       {
         page: "verona",
         label: "Transfers in Verona",
@@ -341,6 +371,12 @@ const it: VeniceHub = {
           "Un aeroporto trevigiano a circa 31 km da Venezia, spesso venduto con il nome di Venezia.",
       },
       {
+        page: "venice-cruise-port",
+        label: "I terminal crociere di Venezia",
+        detail:
+          "Marittima, Marghera e altri tre — e perché ormeggio, terminal e auto sono di rado lo stesso posto.",
+      },
+      {
         page: "venice-stations",
         label: "Le stazioni ferroviarie di Venezia",
         detail:
@@ -376,6 +412,30 @@ const it: VeniceHub = {
     id: "altrove",
     heading: "Altrove in Veneto",
     items: [
+      {
+        page: "treviso",
+        label: "Transfer a Treviso",
+        detail:
+          "Mezz'ora a nord, con il proprio centro cinto da mura e l'aeroporto che ne porta il nome.",
+      },
+      {
+        page: "padua",
+        label: "Transfer a Padova",
+        detail:
+          "La città di terraferma più vicina, dove un'auto a noleggio viene fatta entrare nel centro limitato invece di esserne tenuta fuori.",
+      },
+      {
+        page: "route-venice-padua",
+        label: "Da Venezia a Padova",
+        detail:
+          "Il viaggio fra le due, in entrambe le direzioni, e due capi che fermano l'auto per motivi opposti.",
+      },
+      {
+        page: "route-venice-verona",
+        label: "Da Venezia a Verona",
+        detail:
+          "Il viaggio fra le due, e i due vincoli scollegati ai capi opposti.",
+      },
       {
         page: "verona",
         label: "Transfer a Verona",

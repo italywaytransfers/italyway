@@ -139,6 +139,27 @@ export type RoutePage = PageChrome & {
     note: string;
     source?: Source;
   };
+  /**
+   * What people get wrong when booking this journey, as wrong/instead
+   * pairs.
+   *
+   * Added for Venice <-> Padua, where the two ends fail in opposite
+   * directions: at the Venice end people name a city a car cannot reach,
+   * and at the Padua end they assume a restricted street is unreachable
+   * when a hired car is in fact admitted. Both are corrections rather
+   * than warnings, so a prose paragraph buried them; a two-column pair
+   * puts the fix beside the error.
+   *
+   * Optional, following the same rule as `departure` above: no existing
+   * route page sets it, so every one of them renders exactly as before.
+   */
+  mistakes?: {
+    id: string;
+    eyebrow: string;
+    heading: string;
+    lead: string;
+    items: { id: string; wrong: string; instead: string }[];
+  };
   related: {
     id: string;
     heading: string;

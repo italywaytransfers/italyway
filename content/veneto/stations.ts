@@ -138,6 +138,16 @@ const en: VeniceStations = {
         label: "Treviso Airport to Venice",
         detail: "The road run from the airport sold as Venice, about 31 km away.",
       },
+      {
+        page: "route-venice-padua",
+        label: "Venice to Padua",
+        detail: "Mestre sits on the road between the two, so a Padua leg often follows a mainland arrival.",
+      },
+      {
+        page: "padua",
+        label: "Transfers in Padua",
+        detail: "Half an hour inland, and a city that lets a hired car into its restricted centre.",
+      },
     ],
   },
 
@@ -304,6 +314,16 @@ const it: VeniceStations = {
         page: "route-vce-venice",
         label: "Dall'aeroporto Marco Polo a Venezia",
         detail: "La stessa questione dei punti di arrivo, vista dall'aeroporto.",
+      },
+      {
+        page: "route-venice-padua",
+        label: "Da Venezia a Padova",
+        detail: "Mestre \u00e8 sulla strada fra le due, quindi una tappa padovana segue spesso un arrivo in terraferma.",
+      },
+      {
+        page: "padua",
+        label: "Transfer a Padova",
+        detail: "Mezz'ora nell'entroterra, e una citt\u00e0 che fa entrare un'auto a noleggio nel centro limitato.",
       },
       {
         page: "route-tsf-venice",

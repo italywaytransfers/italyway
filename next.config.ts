@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
     agentFeedback: true,
+    // Set by `next upgrade --agent=security` when moving 16.4.2 -> 16.4.6 to
+    // clear seven published advisories. Records that this app's last agent-run
+    // upgrade was a security upgrade.
+    agentUpgrade: "security",
     // This app has one root layout per language, so there is no single layout
     // for a route-level not-found to compose from. See app/global-not-found.tsx.
     globalNotFound: true,

@@ -22,11 +22,12 @@ import { quotePathFor, type Locale } from "@/lib/site";
  * city on one side, Lake Garda on the other, side by side as equals.
  *
  * The right-hand column is the careful one. Garda is a genuine road
- * destination from this airport — the site's own homepage says so — but no
- * Garda route is published here, because coverage has not been confirmed. So
- * the column names the lake, explains why it is harder than it looks, and
- * then states plainly what the page will not claim. A reader who only skims
- * that column still cannot come away believing a Garda town is on offer.
+ * destination from this airport — the site's own homepage says so — and since
+ * 25 November 2026 five towns are confirmed. Until that day this column
+ * refused to name any of them; it now names exactly those five and stops
+ * there, because the limit moved rather than disappeared. A reader who only
+ * skims the column still cannot come away believing the whole shoreline is
+ * on offer.
  *
  * The Airlink sits below as a callout rather than as a third column, because
  * it is a public service and should not be laid out as one of our options.
@@ -59,6 +60,17 @@ export function VeronaAirportPage({ locale }: { locale: Locale }) {
           {c.fork.heading}
         </BandHeading>
         <CompareColumns columns={c.fork.columns} className="mt-10" />
+        {/* ATV's own page. The lake column states a seasonal bus service, and
+            until 26 November 2026 that claim carried no source. */}
+        {c.fork.source ? (
+          <SourceNote
+            href={c.fork.source.href}
+            linkText={c.fork.source.linkText}
+            className="mt-8 border-t border-border pt-5"
+          >
+            {c.fork.source.text}
+          </SourceNote>
+        ) : null}
       </Band>
 
       <Band

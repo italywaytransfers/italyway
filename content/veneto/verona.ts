@@ -10,8 +10,10 @@ import type { VeronaHub } from "./types";
  * information rather than a platitude.
  *
  * The one place it has to be careful is Lake Garda. The airport is a real
- * road gateway to the lake — the site's own homepage already says so — but no
- * Garda route is published, because coverage has not been confirmed. The page
+ * road gateway to the lake — the site's own homepage already says so — and
+ * since 25 November 2026 coverage is confirmed for five named towns. Until
+ * that day this section refused to name any of them; it now points at the
+ * Lake Garda hub, which names exactly those five and no more. The page
  * therefore names the lake as a direction and explicitly refuses to name a
  * town as served. See `docs/veneto-research-log.md` §3.
  */
@@ -81,13 +83,26 @@ const en: VeronaHub = {
     heading: "Verona and Lake Garda",
     lead: "The airport is a common road gateway to the lake. That is a geographic fact, and this page is careful to keep it one.",
     paragraphs: [
-      "Lake Garda lies west of Verona, and Villafranca is the airport most travellers use for its southern and eastern shores. In summer the local bus operator runs services from the airport to comuni along the lake — a seasonal public service, listed here as context rather than as an option we provide.",
-      "Two things make the lake harder to arrange than it looks, and both are worth raising before you ask. Garda has a Verona side and a Lombardy side, and a town on one shore is not a short hop from a town on the other. And “Lake Garda” is not a destination in itself: like Lake Como, it is a shoreline with towns on it, and which town you name decides the road entirely.",
+      "Lake Garda lies west of Verona, and Villafranca is the airport most travellers use for its southern and eastern shores. ATV runs a seasonal bus from that airport to the lake, route 482, hourly in its operating season — a public service listed here as context rather than as an option we provide, and one that does not run all year.",
+      "Two things make the lake harder to arrange than it looks, and both are worth raising before you ask. Garda has a Verona side and a Lombardy side — two regions, each setting its own traffic rules — and a town on one shore is not a short hop from a town on the other. And “Lake Garda” is not a destination in itself: like Lake Como, it is a shoreline with towns on it, and which town you name decides the road entirely.",
     ],
     caution: {
-      heading: "What this page does not claim",
-      body: "That any particular Lake Garda town can be served. No route to the lake is published on this site, because coverage has not been confirmed — naming a town here without that would be an offer nobody could stand behind. Say the town when you ask, and the answer will be about that town rather than about the lake in general.",
+      heading: "Which towns, exactly",
+      body: "Five are confirmed — Peschiera del Garda, Lazise, Bardolino, Sirmione and Desenzano del Garda — and the rest of the shoreline is not. That is a deliberately short list rather than a claim on the whole lake. Say the town when you ask, and the answer will be about that town rather than about the lake in general.",
     },
+    link: { page: "lake-garda", label: "Lake Garda transfers, town by town" },
+    source: {
+    text:
+      "The seasonal bus between the airport and the lake is ATV's route 482, " +
+      "which the operator describes as running hourly between Verona Airport " +
+      "and Lake Garda, listing the stops as Catullo airport, Villafranca, " +
+      "Valeggio, Peschiera and San Benedetto. ATV gives its current season as " +
+      "ending 18 October 2026 and resuming 21 March 2027, so it is not running " +
+      "as this is written and its dates are set season by season rather than " +
+      "fixed. Read 26 November 2026:",
+    linkText: "ATV publishes its Lake Garda lines and timetables",
+    href: "https://www.atv.verona.it/en/LineeLago",
+  },
   },
 
   onward: {
@@ -100,9 +115,25 @@ const en: VeronaHub = {
         detail: "The airport in full, and the two directions people leave it in.",
       },
       {
+        page: "lake-garda",
+        label: "Lake Garda transfers",
+        detail: "The five confirmed towns, and what each comune says about itself.",
+      },
+      {
+        page: "route-verona-sirmione",
+        label: "Verona to Sirmione",
+        detail: "The one lake journey whose destination has access rules of its own.",
+      },
+      {
         page: "route-vrn-verona",
         label: "Verona Airport to Verona",
         detail: "The short run into the city.",
+      },
+      {
+        page: "route-venice-verona",
+        label: "Venice to Verona",
+        detail:
+          "The transfer between the two cities, in either direction.",
       },
       {
         page: "venice",
@@ -137,7 +168,7 @@ const en: VeronaHub = {
       {
         question: "Can you take me to Lake Garda?",
         answer:
-          "Ask, and name the town. No Lake Garda route is published on this site because coverage has not been confirmed, and the lake has two sides in two different regions. The town decides the road, so the town is what makes the question answerable.",
+          "Yes, to five towns: Peschiera del Garda, Lazise, Bardolino, Sirmione and Desenzano del Garda. Name the one you mean, because the lake has two sides in two different regions and the town decides the road. Sirmione has rules of its own, and its own page, since a hired car may enter its historic centre only when carrying someone staying there.",
       },
       {
         question: "I am visiting both Venice and Verona. Is that one trip?",
@@ -222,19 +253,43 @@ const it: VeronaHub = {
     heading: "Verona e il Lago di Garda",
     lead: "L'aeroporto è una porta d'accesso stradale abituale al lago. È un dato geografico, e questa pagina sta attenta a non farne altro.",
     paragraphs: [
-      "Il Lago di Garda si trova a ovest di Verona, e Villafranca è l'aeroporto che la maggior parte dei viaggiatori usa per le sponde meridionale e orientale. D'estate l'azienda di trasporto locale collega l'aeroporto ad alcuni comuni rivieraschi: un servizio pubblico stagionale, citato qui come contesto e non come un'opzione che offriamo noi.",
-      "Due cose rendono il lago più complicato di quanto sembri, ed entrambe vanno dette prima di chiedere. Il Garda ha una sponda veronese e una lombarda, e un paese su una non è a due passi da un paese sull'altra. E «Lago di Garda» non è una destinazione: come per il Lago di Como, è una riva con dei paesi sopra, e il paese che indicate determina completamente la strada.",
+      "Il Lago di Garda si trova a ovest di Verona, e Villafranca è l'aeroporto che la maggior parte dei viaggiatori usa per le sponde meridionale e orientale. ATV gestisce un bus stagionale da quell'aeroporto al lago, la linea 482, a cadenza oraria nella stagione di esercizio: un servizio pubblico citato qui come contesto e non come un'opzione che offriamo noi, e che non circola tutto l'anno.",
+      "Due cose rendono il lago più complicato di quanto sembri, ed entrambe vanno dette prima di chiedere. Il Garda ha una sponda veronese e una lombarda — due regioni, ciascuna con regole di circolazione proprie — e un paese su una non è a due passi da un paese sull'altra. E «Lago di Garda» non è una destinazione: come per il Lago di Como, è una riva con dei paesi sopra, e il paese che indicate determina completamente la strada.",
     ],
     caution: {
-      heading: "Che cosa questa pagina non afferma",
-      body: "Che un determinato paese del Garda sia servito. Su questo sito non è pubblicata alcuna tratta verso il lago, perché la copertura non è stata confermata: indicare qui un paese sarebbe un'offerta che nessuno potrebbe sostenere. Dite il paese quando scrivete, e la risposta parlerà di quel paese invece che del lago in generale.",
+      heading: "Quali paesi, esattamente",
+      body: "Cinque sono confermati — Peschiera del Garda, Lazise, Bardolino, Sirmione e Desenzano del Garda — e il resto della riva no. È un elenco volutamente breve e non una pretesa su tutto il lago. Dite il paese quando scrivete, e la risposta parlerà di quel paese invece che del lago in generale.",
     },
+    link: { page: "lake-garda", label: "Transfer sul Lago di Garda, paese per paese" },
+    source: {
+    text:
+      "Il bus stagionale fra l'aeroporto e il lago \u00e8 la linea 482 di ATV, che " +
+      "l'azienda descrive come collegamento a cadenza oraria fra l'aeroporto di " +
+      "Verona e il Lago di Garda, con fermate indicate ad aeroporto Catullo, " +
+      "Villafranca, Valeggio, Peschiera e San Benedetto. ATV indica la stagione " +
+      "in corso come conclusa il 18 ottobre 2026 e in ripresa dal 21 marzo " +
+      "2027: non \u00e8 quindi in servizio mentre scriviamo, e le date si fissano " +
+      "stagione per stagione e non una volta per sempre. Consultato il 26 " +
+      "novembre 2026:",
+    linkText: "ATV pubblica le linee e gli orari del Lago di Garda",
+    href: "https://www.atv.verona.it/it/LineeLago",
+  },
   },
 
   onward: {
     id: "proseguimenti",
     heading: "Da Verona",
     items: [
+      {
+        page: "lake-garda",
+        label: "Transfer sul Lago di Garda",
+        detail: "Le cinque località confermate, e che cosa dice di sé ciascun comune.",
+      },
+      {
+        page: "route-verona-sirmione",
+        label: "Da Verona a Sirmione",
+        detail: "L'unico viaggio sul lago la cui destinazione ha regole d'accesso proprie.",
+      },
       {
         page: "verona-airport",
         label: "Aeroporto di Verona Villafranca (VRN)",
@@ -244,6 +299,12 @@ const it: VeronaHub = {
         page: "route-vrn-verona",
         label: "Dall'aeroporto di Verona alla città",
         detail: "Il breve tragitto verso il centro.",
+      },
+      {
+        page: "route-venice-verona",
+        label: "Da Venezia a Verona",
+        detail:
+          "Il transfer fra le due città, in entrambe le direzioni.",
       },
       {
         page: "venice",
@@ -278,7 +339,7 @@ const it: VeronaHub = {
       {
         question: "Mi portate sul Lago di Garda?",
         answer:
-          "Chiedetelo indicando il paese. Su questo sito non è pubblicata alcuna tratta verso il Garda perché la copertura non è stata confermata, e il lago ha due sponde in due regioni diverse. È il paese a determinare la strada, ed è il paese a rendere la domanda rispondibile.",
+          "Sì, in cinque paesi: Peschiera del Garda, Lazise, Bardolino, Sirmione e Desenzano del Garda. Indicate quale intendete, perché il lago ha due sponde in due regioni diverse ed è il paese a determinare la strada. Sirmione ha regole proprie, e una pagina propria, perché un'auto a noleggio può entrare nel suo centro storico solo se trasporta chi vi soggiorna.",
       },
       {
         question: "Visito sia Venezia sia Verona: è un unico viaggio?",

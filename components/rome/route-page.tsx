@@ -233,6 +233,43 @@ export function RoutePageView({
         </Band>
       ) : null}
 
+      {/* Booking mistakes, as wrong/instead pairs. Only Venice <-> Padua
+          sets this, so every other route page is unchanged. The wrong
+          half is set in the foreground weight and the correction beside
+          it, because a reader scanning for their own error should find it
+          first and the fix second. */}
+      {c.mistakes ? (
+        <Band
+          id={c.mistakes.id}
+          labelledBy={`${c.mistakes.id}-heading`}
+          size="wide"
+        >
+          <Eyebrow>{c.mistakes.eyebrow}</Eyebrow>
+          <BandHeading
+            id={`${c.mistakes.id}-heading`}
+            lead={c.mistakes.lead}
+            className="mt-4"
+          >
+            {c.mistakes.heading}
+          </BandHeading>
+          <ul className="mt-8 space-y-5">
+            {c.mistakes.items.map((item) => (
+              <li
+                key={item.id}
+                className="rounded-lg border border-border bg-surface p-6 sm:grid sm:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] sm:gap-8"
+              >
+                <p className="type-body font-medium text-foreground">
+                  {item.wrong}
+                </p>
+                <p className="mt-2 type-body text-muted-foreground sm:mt-0">
+                  {item.instead}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </Band>
+      ) : null}
+
       <Band id={c.faq.id} labelledBy={`${c.faq.id}-heading`}>
         <Eyebrow>{c.faq.eyebrow}</Eyebrow>
         <BandHeading

@@ -80,7 +80,7 @@ const en: MarcoPolo = {
             id: "beyond",
             name: "Beyond the lagoon",
             detail:
-              "Treviso, Padua, Verona and the rest of the mainland road network.",
+              "Padua, Treviso, Verona and the rest of the mainland road network. These are journeys we arrange — what a car can do at the far end is then that town's own question, and Padua in particular restricts its centre in a way worth reading before you book.",
           },
         ],
       },
@@ -140,6 +140,11 @@ const en: MarcoPolo = {
         detail: "The journey set out endpoint by endpoint.",
       },
       {
+        page: "route-venice-vce",
+        label: "Venice to Marco Polo Airport",
+        detail: "Leaving, where the first leg is yours before any car begins.",
+      },
+      {
         page: "venice",
         label: "Private transfers in Venice",
         detail: "Why the road stops where it does.",
@@ -148,6 +153,16 @@ const en: MarcoPolo = {
         page: "venice-stations",
         label: "Venice's railway stations",
         detail: "Mestre is the road-reachable one; Santa Lucia is not.",
+      },
+      {
+        page: "padua",
+        label: "Private transfers in Padua",
+        detail: "The nearest mainland city we serve, and the four permissions its centre asks for.",
+      },
+      {
+        page: "treviso",
+        label: "Private transfers in Treviso",
+        detail: "A common mainland destination from this airport, and a different city from its own.",
       },
       {
         page: "treviso-airport",
@@ -262,7 +277,7 @@ const it: MarcoPolo = {
             id: "beyond",
             name: "Oltre la laguna",
             detail:
-              "Treviso, Padova, Verona e il resto della rete stradale.",
+              "Padova, Treviso, Verona e il resto della rete stradale. Sono viaggi che organizziamo: che cosa possa fare un'auto all'altro capo è poi una questione di quella città, e Padova in particolare limita il proprio centro in un modo che conviene conoscere prima di prenotare.",
           },
         ],
       },
@@ -322,6 +337,11 @@ const it: MarcoPolo = {
         detail: "Il viaggio spiegato punto di arrivo per punto di arrivo.",
       },
       {
+        page: "route-venice-vce",
+        label: "Da Venezia all'aeroporto Marco Polo",
+        detail: "In partenza, dove la prima tratta è vostra prima che cominci l'auto.",
+      },
+      {
         page: "venice",
         label: "Transfer privati a Venezia",
         detail: "Perché la strada finisce dove finisce.",
@@ -330,6 +350,16 @@ const it: MarcoPolo = {
         page: "venice-stations",
         label: "Le stazioni ferroviarie di Venezia",
         detail: "Mestre è quella raggiungibile in auto, Santa Lucia no.",
+      },
+      {
+        page: "treviso",
+        label: "Transfer privati a Treviso",
+        detail: "Una destinazione di terraferma frequente da questo aeroporto, e una città diversa dal suo.",
+      },
+      {
+        page: "padua",
+        label: "Transfer privati a Padova",
+        detail: "La città di terraferma più vicina che serviamo, e i quattro permessi che il suo centro richiede.",
       },
       {
         page: "treviso-airport",

@@ -138,6 +138,10 @@ const strings: Record<Locale, Strings> = {
       "venice-marco-polo": "Venice Marco Polo (VCE)",
       "treviso-airport": "Treviso (TSF)",
       "verona-airport": "Verona Villafranca (VRN)",
+      padua: "Transfers in Padua",
+      treviso: "Transfers in Treviso",
+      "lake-garda": "Lake Garda",
+      "venice-cruise-port": "Venice cruise terminals",
       "venice-stations": "Venice railway stations",
       "route-vce-venice": "Marco Polo Airport to Venice",
       "route-tsf-venice": "Treviso Airport to Venice",
@@ -292,6 +296,10 @@ const strings: Record<Locale, Strings> = {
       "venice-marco-polo": "Venezia Marco Polo (VCE)",
       "treviso-airport": "Treviso (TSF)",
       "verona-airport": "Verona Villafranca (VRN)",
+      padua: "Transfer a Padova",
+      treviso: "Transfer a Treviso",
+      "lake-garda": "Lago di Garda",
+      "venice-cruise-port": "Terminal crociere di Venezia",
       "venice-stations": "Stazioni ferroviarie di Venezia",
       "route-vce-venice": "Dall'aeroporto Marco Polo a Venezia",
       "route-tsf-venice": "Dall'aeroporto di Treviso a Venezia",
@@ -454,7 +462,20 @@ export function buildNavigation(locale: Locale): NavEntry[] {
         {
           id: "venice-and-veneto",
           heading: s.veniceAndVeneto,
-          items: [page("venice"), page("verona"), page("venice-stations")],
+          // Padua, Treviso and Lake Garda are destination hubs, and the
+          // cruise terminals belong here on the Romagna precedent above,
+          // where ravenna-terminal sits beside its city. Route pages are
+          // deliberately absent: the Veneto has eight of them and they
+          // would swamp the group.
+          items: [
+            page("venice"),
+            page("verona"),
+            page("padua"),
+            page("treviso"),
+            page("lake-garda"),
+            page("venice-stations"),
+            page("venice-cruise-port"),
+          ],
         },
         {
           id: "florence-and-tuscany",
@@ -725,10 +746,14 @@ export function buildFooterNav(locale: Locale): NavGroup[] {
       items: [
         page("venice"),
         page("verona"),
+        page("padua"),
+        page("treviso"),
+        page("lake-garda"),
         page("venice-marco-polo"),
         page("treviso-airport"),
         page("verona-airport"),
         page("venice-stations"),
+        page("venice-cruise-port"),
       ],
     },
     {

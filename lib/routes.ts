@@ -49,9 +49,18 @@ export type PageId =
   | "treviso-airport"
   | "verona-airport"
   | "venice-stations"
+  | "venice-cruise-port"
   | "route-vce-venice"
+  | "route-venice-vce"
+  | "route-venice-verona"
   | "route-tsf-venice"
   | "route-vrn-verona"
+  | "lake-garda"
+  | "route-verona-sirmione"
+  | "padua"
+  | "route-venice-padua"
+  | "route-vrn-garda"
+  | "treviso"
   | "florence"
   | "pisa-airport"
   | "florence-airport"
@@ -408,6 +417,174 @@ const pages: Record<PageId, PageRecord> = {
     published: true,
     priority: 0.8,
   },
+  // ── Venice → Marco Polo ───────────────────────────────────────────────
+  // Added 25 November 2026. Not the inbound page reversed: that one's own
+  // lead says "the departure end is simple, the arrival end is Venice",
+  // which is true of an arrival and backwards for a departure.
+  //
+  // Leaving the historic centre, the hard end comes first — there is no
+  // road outside the door, so the traveller makes the first leg themselves
+  // against an airline deadline. Nothing on the site covered that: a grep
+  // for "check-in" across the Veneto content matched only the cruise page.
+  //
+  // Parented to `venice-marco-polo`, as its inbound counterpart is, so both
+  // directions sit under the airport a reader would browse.
+  // ── Venice → Verona ───────────────────────────────────────────────────
+  // Added 25 November 2026. The Veneto's first city-to-city route, and the
+  // audit found zero existing coverage in either direction.
+  //
+  // ONE page, not two. Venice → Verona and Verona → Venice are the same
+  // service with the same pair of constraints in the opposite order, and
+  // neither carries a deadline the other lacks — unlike an airport pair,
+  // where an arrival is tracked and a departure runs to check-in. The
+  // return is covered inside the page's `departure` section; a second URL
+  // would exist only to target the reversed phrase.
+  //
+  // Parented to `venice`, the busier end and the one most travellers
+  // start from.
+  "route-venice-verona": {
+    path: {
+      en: "/routes/venice-to-verona",
+      it: "/it/tratte/venezia-verona",
+    },
+    parent: "venice",
+    published: true,
+    priority: 0.7,
+  },
+
+  "route-venice-vce": {
+    path: {
+      en: "/routes/venice-to-marco-polo-airport",
+      it: "/it/tratte/venezia-aeroporto-marco-polo",
+    },
+    parent: "venice-marco-polo",
+    published: true,
+    priority: 0.8,
+  },
+
+  // ── Lake Garda ────────────────────────────────────────────────────────
+  // Added 25 November 2026, when operator coverage was confirmed for five
+  // towns: Peschiera del Garda, Lazise, Bardolino, Sirmione and Desenzano
+  // del Garda. Until that day the Verona page stated in print that no lake
+  // route could be published; this pair of URLs is what replaced it.
+  //
+  // Parented to `verona` on the Lake Como precedent above: the lake is not
+  // in Verona, but Verona and its airport are how a visitor reaches this
+  // shore, and the breadcrumb follows the link architecture.
+  "lake-garda": {
+    path: { en: "/destinations/lake-garda", it: "/it/destinazioni/lago-di-garda" },
+    parent: "verona",
+    published: true,
+    priority: 0.9,
+  },
+
+  // ONE lake route, not five. Four of the five towns would need a page
+  // saying the same thing with the name changed, which is cannibalisation
+  // by another name. Sirmione earns its own URL because its historic
+  // centre is a ZTL whose rule for a hired car is unlike anything else on
+  // the lake: entry is permitted at any hour, but only to carry residents,
+  // dwellers or people staying in the town.
+  //
+  // Parented to `lake-garda` rather than to `verona`, on the
+  // `route-mxp-como` precedent: the lake hub is the page that frames it.
+  "route-verona-sirmione": {
+    path: {
+      en: "/routes/verona-to-sirmione",
+      it: "/it/tratte/verona-sirmione",
+    },
+    parent: "lake-garda",
+    published: true,
+    priority: 0.7,
+  },
+
+  // ── Padua ──────────────────────────────────────────────────────
+  // Added 25 November 2026, when coverage was confirmed. Until then the
+  // cluster architecture deferred Padua pending "demand evidence plus
+  // provider coverage", and the page inventory recorded it as P3.
+  //
+  // The hub earns its URL on access rules rather than on the city being
+  // attractive: Padua admits taxis and NCC to its ZTL with no permit but
+  // a plate registration, admits them to the pedestrian areas inside it,
+  // excludes five named streets, and controls reserved lanes separately.
+  // That is a fourth distinct regime after Rome, Verona and Sirmione.
+  //
+  // Parented to `venice`: Padua is not in Venice, but Venice and its
+  // airport are how most visitors reach it, and the breadcrumb follows
+  // the link architecture — the same reasoning as `lake-garda` under
+  // `verona` and `lake-como` under `milan`.
+  padua: {
+    path: { en: "/destinations/padua", it: "/it/destinazioni/padova" },
+    parent: "venice",
+    published: true,
+    priority: 0.9,
+  },
+
+  // ONE page, not two, on the `route-venice-verona` precedent above:
+  // neither direction carries a deadline the other lacks, so Padua →
+  // Venice is covered in this page's `departure` section rather than at a
+  // second URL that would target the reversed phrase.
+  //
+  // No station page accompanies it. Venice earns one because two of its
+  // stations are confusably named; Padua has no such problem, so the
+  // station belongs in a hub section instead of a thin competing page.
+  "route-venice-padua": {
+    path: {
+      en: "/routes/venice-to-padua",
+      it: "/it/tratte/venezia-padova",
+    },
+    parent: "venice",
+    published: true,
+    priority: 0.7,
+  },
+
+  // Verona Airport to Lake Garda. The cluster audit found this as an open P2
+  // deferral whose gate was "a named town AND verified coverage" - both of
+  // which now hold, so it was the one unblocked gap in the Veneto.
+  //
+  // ONE page for five towns, not five thin pages, and both directions on it:
+  // the return has a flight to catch and so earns a full section, but not a
+  // second URL. Parented to verona-airport, as the inventory specifies, and
+  // distinct from route-verona-sirmione because an airport arrival is a
+  // different intent from a city departure.
+  "route-vrn-garda": {
+    path: {
+      en: "/routes/verona-airport-to-lake-garda",
+      it: "/it/tratte/aeroporto-verona-lago-di-garda",
+    },
+    parent: "verona-airport",
+    published: true,
+    priority: 0.8,
+  },
+
+  // Treviso, the CITY - not the airport, which is treviso-airport.
+  //
+  // Built 26 November 2026 to close a gap the cluster audit found: the TSF
+  // page recommends Treviso as a destination twice and had nowhere to send
+  // the reader, because no city PageId existed.
+  //
+  // Parented to `home`, NOT to venice, and the reason is the visible
+  // breadcrumb. The closure audit found that Home > Venice > Treviso reads as
+  // a claim that Treviso belongs to Venice, which is wrong: it is a separate
+  // city and a separate province about 30 km away. Elsewhere in the project a
+  // gateway parent is right because the child really is a satellite of it -
+  // lake-garda under verona, lake-como under milan - but a provincial capital
+  // is not, so Treviso sits beside venice and verona at the top level.
+  //
+  // treviso-airport keeps parent: "venice" deliberately. That page argues
+  // about serving Venice traffic, so the gateway reading is correct there.
+  // The two trails differing is the point, not an oversight.
+  //
+  // ONE page, no route URLs. The TSF-to-city and VCE-to-Treviso journeys are
+  // sections here, and the station is a section too - Treviso has no
+  // equivalent of Venice's two confusably named stations, so a separate
+  // station page would be thin and would compete with this one.
+  treviso: {
+    path: { en: "/destinations/treviso", it: "/it/destinazioni/treviso" },
+    parent: "home",
+    published: true,
+    priority: 0.9,
+  },
+
   "route-vce-venice": {
     path: {
       en: "/routes/marco-polo-airport-to-venice",
@@ -1000,6 +1177,27 @@ const pages: Record<PageId, PageRecord> = {
     published: true,
     priority: 0.8,
   },
+  // ── Venice cruise terminals ───────────────────────────────────────────
+  // Added 25 November 2026, the first page from the Veneto audit.
+  //
+  // The region's one conspicuous gap: the site had cruise-port pages for
+  // six Italian ports and none for Venice, which has no fewer than five
+  // cruise locations across two separate places.
+  //
+  // Parented to `venice`, not to a Veneto pillar — there isn't one, and
+  // Venice is the hub a cruise passenger would browse. The slug names
+  // Marittima because that is the terminal passengers are handled at,
+  // including those whose ship is moored at Marghera.
+  "venice-cruise-port": {
+    path: {
+      en: "/cruise-ports/venice-marittima",
+      it: "/it/porti-crociere/venezia-marittima",
+    },
+    parent: "venice",
+    published: true,
+    priority: 0.8,
+  },
+
   "messina-cruise-port": {
     path: { en: "/cruise-ports/messina", it: "/it/porti-crociere/messina" },
     parent: "sicily",

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Band } from "@/components/site/band";
 import {
   BandHeading,
@@ -28,10 +29,14 @@ import { quotePathFor, type Locale } from "@/lib/site";
  * it is making.
  *
  * The one section that needs care is Lake Garda, and it is built as a
- * statement followed immediately by a refusal: the airport is a real road
- * gateway to the lake, and no Garda route is published because coverage has
- * not been confirmed. The caution sits in an accent callout so it cannot be
- * skimmed past.
+ * statement followed immediately by its limit: the airport is a real road
+ * gateway to the lake, and five towns are confirmed — Peschiera del Garda,
+ * Lazise, Bardolino, Sirmione and Desenzano del Garda — rather than the
+ * shoreline as a whole. Until 25 November 2026 this section carried a flat
+ * refusal, because no coverage had been confirmed at all; it now carries the
+ * short list and a link to the Lake Garda hub. The callout kept its accent
+ * tone so the limit cannot be skimmed past, which is as true of a list of
+ * five as it was of a refusal.
  */
 export function VeronaHubPage({ locale }: { locale: Locale }) {
   const c = veronaHub[locale];
@@ -82,7 +87,10 @@ export function VeronaHubPage({ locale }: { locale: Locale }) {
         </div>
       </Band>
 
-      {/* A real fact, then an immediate refusal. */}
+      {/* A real fact, then its limit — and, since 25 November 2026, a way
+          out of the limit. This band used to end in a flat refusal; it now
+          ends in a link, because five towns are confirmed and the honest
+          answer changed. */}
       <Band id={c.garda.id} labelledBy={`${c.garda.id}-heading`}>
         <div className="grid gap-x-14 gap-y-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
           <div>
@@ -95,9 +103,29 @@ export function VeronaHubPage({ locale }: { locale: Locale }) {
               {c.garda.heading}
             </BandHeading>
             <Paragraphs items={c.garda.paragraphs} className="mt-7" />
+            {/* ATV's own page, cited since 26 November 2026. The seasonal bus
+                claim above had been unsourced, and sat beside an Airlink
+                source note that covers a different service. */}
+            {c.garda.source ? (
+              <SourceNote
+                href={c.garda.source.href}
+                linkText={c.garda.source.linkText}
+                className="mt-7 border-t border-border pt-5"
+              >
+                {c.garda.source.text}
+              </SourceNote>
+            ) : null}
           </div>
           <Callout heading={c.garda.caution.heading} tone="accent">
             <p>{c.garda.caution.body}</p>
+            <p className="mt-4">
+              <Link
+                href={pathFor(c.garda.link.page, locale)}
+                className="type-body font-medium underline underline-offset-4 transition-colors hover:text-accent-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              >
+                {c.garda.link.label}
+              </Link>
+            </p>
           </Callout>
         </div>
       </Band>

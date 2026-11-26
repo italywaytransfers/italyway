@@ -90,7 +90,7 @@ const en: TrevisoAirport = {
       },
       {
         title: "Treviso itself may be the answer",
-        body: "If your business or your stay is in Treviso or the country around it, the airport is three kilometres away rather than thirty-one. It is worth checking that Venice is genuinely where you need to be.",
+        body: "If your business or your stay is in Treviso or the country around it, the airport is three kilometres away rather than thirty-one. It is worth checking that Venice is genuinely where you need to be \u2014 and if it is not, our Treviso page covers transfers into the city, its station and its restricted centre.",
       },
       {
         title: "Low-cost hours are normal here",
@@ -103,6 +103,11 @@ const en: TrevisoAirport = {
     id: "onward",
     heading: "From Treviso Airport",
     items: [
+      {
+        page: "treviso",
+        label: "Private transfers in Treviso",
+        detail: "The city itself \u2014 if your stay is here rather than in Venice, this is the page you want.",
+      },
       {
         page: "route-tsf-venice",
         label: "Treviso Airport to Venice",
@@ -145,7 +150,7 @@ const en: TrevisoAirport = {
       {
         question: "Would I be better off staying in Treviso?",
         answer:
-          "Possibly, and it is worth asking before arranging the longer journey. Treviso is a city in its own right and is a tenth of the distance from the airport.",
+          "Possibly, and it is worth asking before arranging the longer journey. Treviso is a city in its own right and is a tenth of the distance from the airport. We have a Treviso page for transfers into the city, covering the station, hotels inside the walls and what its access rules change.",
       },
       {
         question: "My flight lands very late. Is that a problem?",
@@ -252,6 +257,11 @@ const it: TrevisoAirport = {
     id: "proseguimenti",
     heading: "Dall'aeroporto di Treviso",
     items: [
+      {
+        page: "treviso",
+        label: "Transfer privati a Treviso",
+        detail: "La città stessa: se il soggiorno è qui e non a Venezia, questa è la pagina che cercate.",
+      },
       {
         page: "route-tsf-venice",
         label: "Dall'aeroporto di Treviso a Venezia",

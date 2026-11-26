@@ -160,6 +160,11 @@ const vceEn: RoutePage = {
     heading: "Related",
     items: [
       {
+        page: "route-venice-vce",
+        label: "Venice to Marco Polo Airport",
+        detail: "The journey home, where the difficult half comes first instead of last.",
+      },
+      {
         page: "route-tsf-venice",
         label: "Treviso Airport to Venice",
         detail: "The same city end, from much further out.",
@@ -352,6 +357,11 @@ const vceIt: RoutePage = {
     id: "correlate",
     heading: "Tratte collegate",
     items: [
+      {
+        page: "route-venice-vce",
+        label: "Da Venezia all'aeroporto Marco Polo",
+        detail: "Il viaggio di ritorno, dove la metà difficile viene prima invece che dopo.",
+      },
       {
         page: "route-tsf-venice",
         label: "Dall'aeroporto di Treviso a Venezia",
@@ -823,7 +833,7 @@ const vrnEn: RoutePage = {
       "The full address, or the station if you are connecting.",
       "How many passengers and how much luggage.",
     ],
-    note: "If your destination is Lake Garda rather than Verona, say the town — no Garda route is published on this site, and the town is what makes that question answerable.",
+    note: "If your destination is Lake Garda rather than Verona, say the town — five are confirmed, and which one you name decides the road, the region and sometimes whether a car can reach the door at all.",
   },
   related: {
     id: "related",
@@ -870,7 +880,7 @@ const vrnEn: RoutePage = {
       {
         question: "What if I am going to Lake Garda?",
         answer:
-          "Name the town when you ask. No Garda route is published here because coverage has not been confirmed, and the lake has two shores in two regions.",
+          "Name the town when you ask. Five are confirmed — Peschiera del Garda, Lazise, Bardolino, Sirmione and Desenzano del Garda — and the lake has two shores in two regions, so the town is what decides the journey.",
       },
     ],
   },
@@ -964,7 +974,7 @@ const vrnIt: RoutePage = {
       "L'indirizzo completo, o la stazione se proseguite.",
       "Quanti passeggeri e quanti bagagli.",
     ],
-    note: "Se la destinazione è il Lago di Garda e non Verona, indicate il paese: su questo sito non è pubblicata alcuna tratta verso il Garda, ed è il paese a rendere affrontabile la domanda.",
+    note: "Se la destinazione è il Lago di Garda e non Verona, indicate il paese: cinque sono confermati, e quale indicate decide la strada, la regione e a volte se un'auto possa arrivare alla porta.",
   },
   related: {
     id: "correlate",
@@ -1011,7 +1021,7 @@ const vrnIt: RoutePage = {
       {
         question: "E se devo andare sul Lago di Garda?",
         answer:
-          "Indicate il paese quando scrivete. Qui non è pubblicata alcuna tratta verso il Garda perché la copertura non è stata confermata, e il lago ha due sponde in due regioni.",
+          "Indicate il paese quando scrivete. Cinque sono confermati — Peschiera del Garda, Lazise, Bardolino, Sirmione e Desenzano del Garda — e il lago ha due sponde in due regioni: è il paese a decidere il viaggio.",
       },
     ],
   },
